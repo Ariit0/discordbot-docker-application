@@ -4,6 +4,7 @@ const client = new Client();
 
 client.on('ready', () => console.log('Ready!'));
 
+
 client.on('message', (msg) => {
     if (msg.author.bot) return;
 
