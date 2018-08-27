@@ -1,0 +1,23 @@
+{
+  "name": "discordbot-docker-application",
+  "version": "1.0.0",
+  "description": "discordbot-docker-application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ariit0/discordbot-docker-application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ariit0/discordbot-docker-application/issues"
+  },
+  "homepage": "https://github.com/Ariit0/discordbot-docker-application#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
