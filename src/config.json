@@ -1,4 +1,5 @@
 {
-	"prefix": ".",
-	"activity": "Kupo Kupo"
+	"commandPrefix": ".",
+	"activity": "Kupo Kupo",
+	"ownerID": "116178378238853121"
 }
