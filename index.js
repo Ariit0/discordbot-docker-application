@@ -28,7 +28,6 @@ fs.readdir('./src/commands/', (err, files) => {
 	});
 });
 
-
 /**
  * Bot's awake method, used to intialise and establish bot's current settings 
  * @param  {[type]}
@@ -39,7 +38,6 @@ bot.on('ready', async () => {
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 	bot.user.setActivity(config.activity, {type: 'STREAMING'});
 });
-
 
 /**
  * Bot's event handler for listening for incoming messages
