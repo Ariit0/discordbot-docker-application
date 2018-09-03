@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Ariit0/discordbot-docker-application#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "google-spreadsheet": "^2.0.5",
+    "googleapis": "^27.0.0"
   }
 }
