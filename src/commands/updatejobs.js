@@ -1,17 +1,18 @@
 /**
  * This command is responsible for manually updating the JSON database 
- * TODO : Automated update
+ * TODO : Refactor code.......
  */
-
-var Sheet = require('google-spreadsheet');
-var auth = require('../client_secret.json');
-var fs = require('fs');
+const config  = require('../config.json');
+const Sheet = require('google-spreadsheet');
+const auth = require('../client_secret.json');
+const fs = require('fs');
 
 // create sheet object using spreadsheet ID
 var doc = new Sheet('1V-eQTG1UNTDnG-lrGwd_Iby5rwLZlpZ0nxpuhobp_r4');
 
-
 exports.run = async (bot, msg, args) => {
+	// only owner can use this command
+	if (msg.author.id !== config.ownerID) return;
 
 	doc.useServiceAccountAuth(auth, function (err)  {
 		doc.getRows(1, function (err, rows) {
@@ -20,10 +21,9 @@ exports.run = async (bot, msg, args) => {
 			 * Method use to pull row data and sanitise for JSON formatting (pretty messy)
 			 */
 			var jobDB = {}; 
-			var jobData = {};
 			var headings = [];
 			var data = [];
-			var keys =[];
+			var keys = [];
 
 			// convert object to string
 			var myJSON = JSON.stringify(rows);
@@ -43,60 +43,61 @@ exports.run = async (bot, msg, args) => {
 				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 ]*/g, '');
 			}
 
+			// parent key 
 			let k = 0;
 			for (var i = 0; i < data.length; i+=headings.length) {
 				keys[k] = data[i];
 				k++;
 			}
 
-
-			// 2d array....
+			// seperates child keys and child object pairs into seperate arrays (can be done better....just quick solution)
+			// improve naming of variables...
 			var singleRows = [];
+			var headerArray = [];
 			var numRow = keys.length;
 			var numCols = headings.length
 
 			for (var i = 0; i < numRow; i++) { 
-
 				var subSingleRow = [];
+				var subHeaderArray = [];
 
+				var n = 0;
 				for (var j = (i * numCols); j < (i * numCols) + numCols; j++) { 	
 					subSingleRow.push(data[j]);
+					subHeaderArray.push(headings[n]);
+					n++;
 				}
 				singleRows.push(subSingleRow);
+				headerArray.push(subHeaderArray);
 			}
 
-			//console.log(headings);
-			//console.log(jobData);
-			//console.log(keys);
-			//console.log(headings);
-			//console.log(data);
-			console.log(singleRows[0][3]);
+			// merge child key and child object pairs into a single parent object
+			for (var i = 0; i < numRow; i++) { 
+				var jobData = {}; 
+				for (var j = 0; j < numCols; j++) { 
+					jobData[headerArray[i][j]] = singleRows[i][j];
+				}
 
+				jobDB[keys[i]] = jobData;
+			}
 
+			// convert to string
+			var JSONfile = JSON.stringify(jobDB, null, 4);
 
-			//clean data
-			// for (var key in myJSON) {
-			// 	if (myJSON.hasOwnProperty(key)) {
+			// save output as json
+			var buffer = new Buffer(JSONfile);
 
-			// 		console.log(key + "->" + myJSON[key]);
+			fs.open('./src/DB.json', 'w', (err, fd) => {
+				if (err) throw err;
 
-			// 	}
-			// }
+				fs.write(fd, buffer, 0, buffer.length, null, (err) => {
+					if (err) throw err;
 
-
-			// var buffer = new Buffer(j);
-
-			// fs.open('./src/DB.json', 'w', (err, fd) => {
-			// 	if (err) throw err;
-
-			// 	fs.write(fd, buffer, 0, buffer.length, null, (err) => {
-			// 		if (err) throw err;
-
-			// 		fs.close(fd, () => {
-			// 			console.log('DB Updated');
-			// 		});
-			// 	});
-			// });
+					fs.close(fd, () => {
+						console.log('DB Updated');
+					});
+				});
+			});
 		});
 	});
 
