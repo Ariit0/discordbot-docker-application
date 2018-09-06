@@ -30,17 +30,20 @@ exports.run = async (bot, msg, args) => {
 
 			// grab headings with the prefix "job-" and only store the first occurrence of it
 			var colHeading = myJSON.match(/\"([a-z0-9]{3}-[a-z0-9]*-?[a-z0-9]*-?[a-z0-9]*)\"(?![\s\S]+\1)/g);	
-			// grabs row data denoted with the prefix ":\""
-			var rowData = myJSON.match(/:\"([-A-Z a-z 0-9 /]*)\"/g);
 
-			// sanitise data and store in seperate arrays
+			// grabs row data denoted with the prefix ":\""
+			var rowData = myJSON.match(/\"([-A-Z a-z 0-9 /.]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g);
+
+			console.log(rowData);
+			// sanitise data and store in seperate arrays-
 			for (var i = 0; i < rowData.length; i++) {
 				// remove quotations around string
 				if (i < colHeading.length) {
 					headings[i] = colHeading[i].toString().replace(/\"/g, '');
 				}
 				// remove colon and quotations around string
-				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 ]*/g, '');
+				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /.:]*/g, '');
+
 			}
 
 			// parent key 
@@ -62,11 +65,13 @@ exports.run = async (bot, msg, args) => {
 				var subHeaderArray = [];
 
 				var n = 0;
+				// iterate each row and add to subarrays
 				for (var j = (i * numCols); j < (i * numCols) + numCols; j++) { 	
 					subSingleRow.push(data[j]);
 					subHeaderArray.push(headings[n]);
 					n++;
 				}
+	
 				singleRows.push(subSingleRow);
 				headerArray.push(subHeaderArray);
 			}
@@ -80,7 +85,6 @@ exports.run = async (bot, msg, args) => {
 
 				jobDB[keys[i]] = jobData;
 			}
-
 			// convert to string
 			var JSONfile = JSON.stringify(jobDB, null, 4);
 
@@ -100,6 +104,6 @@ exports.run = async (bot, msg, args) => {
 			});
 		});
 	});
-
+				msg.channel.send('DB Updated');
 }
 
