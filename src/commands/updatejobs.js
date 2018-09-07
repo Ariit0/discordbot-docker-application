@@ -25,6 +25,8 @@ exports.run = async (bot, msg, args) => {
 			var data = [];
 			var keys = [];
 
+			var rowRegex = /\"[-A-Z a-z 0-9 /&.]*\"}|\"([-A-Z a-z 0-9 /&.]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g;
+
 			// convert object to string
 			var myJSON = JSON.stringify(rows);
 
@@ -32,9 +34,9 @@ exports.run = async (bot, msg, args) => {
 			var colHeading = myJSON.match(/\"([a-z0-9]{3}-[a-z0-9]*-?[a-z0-9]*-?[a-z0-9]*)\"(?![\s\S]+\1)/g);	
 
 			// grabs row data denoted with the prefix ":\""
-			var rowData = myJSON.match(/\"([-A-Z a-z 0-9 /.]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g);
+			var rowData = myJSON.match(rowRegex);
 
-			console.log(rowData);
+			//console.log(myJSON);
 			// sanitise data and store in seperate arrays-
 			for (var i = 0; i < rowData.length; i++) {
 				// remove quotations around string
@@ -42,17 +44,18 @@ exports.run = async (bot, msg, args) => {
 					headings[i] = colHeading[i].toString().replace(/\"/g, '');
 				}
 				// remove colon and quotations around string
-				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /.:]*/g, '');
+				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&.:]*/g, '');
 
 			}
 
 			// parent key 
 			let k = 0;
-			for (var i = 0; i < data.length; i+=headings.length) {
+			for (var i = 0; i < data.length; i+=headings.length ) {
 				keys[k] = data[i];
 				k++;
 			}
-
+			console.log(colHeading.length);
+			//console.log(data[68]);
 			// seperates child keys and child object pairs into seperate arrays (can be done better....just quick solution)
 			// improve naming of variables...
 			var singleRows = [];

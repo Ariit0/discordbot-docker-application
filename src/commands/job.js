@@ -9,6 +9,7 @@ const jobDB = require('../DB.json');
 exports.run = async (bot, msg, args) => {
 
 	if (typeof args !== 'undefined' && args.length > 0) {
+		let jobAutoTypes = ['Element Enhance', 'Element Resistance', 'Ailment Resistance', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift'];
 
 		let jobQuery = args[0];
 		let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
@@ -41,22 +42,14 @@ exports.run = async (bot, msg, args) => {
 			    thumbnail: {
 			    	url: jobThumbUrl
 			    },
-			    description: `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} || ${jobOrbSet2}`,
+			    description: `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`,
 			    fields: [{
 			    	name:"Stats:",
 			        value: JobStatValue(jobFieldNames, jobFieldValues)
 			      },
 			      {
 			    	name:"Auto-Abilities:",
-			        value: JobStatValue(jobFieldNames, jobFieldValues)
-			      },
-			      {
-			    	name:"Ultimate:",
-			        value: JobStatValue(jobFieldNames, jobFieldValues)
-			      },
-			      {
-			    	name:"Weapon(s):",
-			        value: JobStatValue(jobFieldNames, jobFieldValues)
+			        value: "```xl\n| Job Change Shift | Auto-Charge-Ultimate+3 |```"
 			      }
 			    ],
 			    timestamp: new Date(),
@@ -75,7 +68,7 @@ exports.run = async (bot, msg, args) => {
 }
 
 function JobStatValue(fieldNames, fieldValues) {
-	let string = "```";
+	let string = "```xl\n";
 
 	for (var i = 3; i <= 9; i++) {
 		let space = "";
@@ -106,6 +99,18 @@ function JobStatValue(fieldNames, fieldValues) {
 		string += `${space} |\n`;
 	}
 	string += "```";
+
+	return string;
+}
+
+function JobAutoValue(fieldNames, fieldValues) {
+	let string = "```xl\n";
+
+	for (var i = 0; i < Things.length; i++) {
+		Things[i]
+	}
+
+
 
 	return string;
 }
