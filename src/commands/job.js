@@ -9,7 +9,9 @@ const jobDB = require('../DB.json');
 exports.run = async (bot, msg, args) => {
 
 	if (typeof args !== 'undefined' && args.length > 0) {
-		let jobAutoTypes = ['Element Enhance', 'Element Resistance', 'Ailment Resistance', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift'];
+
+		let jobAutoes = {};
+		let jobAutoTypes = ['Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift'];
 
 		let jobQuery = args[0];
 		let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
@@ -20,17 +22,82 @@ exports.run = async (bot, msg, args) => {
 		let jobOrbSet2 =JSON.stringify(jobDB[jobQuery]['job-orb-set-2']).replace(/"/g, '');
 		let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
 
-		var jobFieldNames = [];
+		// seperate columns into separate categories
+		var jobEE = [];  // element enhance
+		var jobERES = []; //  resist
+		var jobARES = []; // ailment resist
+		var jobCLU = []; //  cluch boons
+		var jobDRI = []; // drive heal
+		var jobDMG = []; // damage
+		var jobBRK = []; // break
+		var jobDEF = []; // defense
+		var jobOTH = []; // other
+		var jobCHG = []; // job change shift
+		var jobFieldNames = []; 
 		var jobFieldValues = [];
 
 		for (var fields in jobDB[jobQuery]) {
 			jobFieldNames.push(fields);
 			jobFieldValues.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+
+			// push EE headings
+			if (/job-[a-z]*-boost/g.test(fields) == true) {
+				jobEE.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+			// push RES headings
+			if (/job-[a-z]*-resist/g.test(fields) == true) {
+				jobERES.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+			if (/job-ailment-avert/g.test(fields) == true) {
+				jobARES.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+			// push clutch boons headings
+			if (/job-clutch-boons/g.test(fields) == true) {
+				jobCLU.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+			// push headings
+			if (/job-drive-heal/g.test(fields) == true) {
+				jobDRI.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+			// push headings
+			if (/job-auto-damage/g.test(fields) == true) {
+				jobDMG.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+						// push headings
+			if (/job-auto-break/g.test(fields) == true) {
+				jobBRK.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+						// push headings
+			if (/job-auto-defense/g.test(fields) == true) {
+				jobDEF.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+						// push headings
+			if (/job-auto-other/g.test(fields) == true) {
+				jobOTH.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}
+
+						// push headings
+			if (/job-change-shift/g.test(fields) == true) {
+				jobCHG.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}			
+		}
+
+		// 2D array setup for category headings
+		var jobCategories = [jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG]; 
+
+		for (var i = 0; i < jobAutoTypes.length; i++) {
+			jobAutoes[jobAutoTypes[i]] = jobCategories[i];
 		}
 
 		jobFieldNames = TextCaptialiseNCut(jobFieldNames);
-
-		console.log(jobFieldNames);
 
 		try {
 			msg.channel.send({embed: {
@@ -49,7 +116,7 @@ exports.run = async (bot, msg, args) => {
 			      },
 			      {
 			    	name:"Auto-Abilities:",
-			        value: "```xl\n| Job Change Shift | Auto-Charge-Ultimate+3 |```"
+			        value: JobAutoValue(jobAutoes, jobFieldValues)
 			      }
 			    ],
 			    timestamp: new Date(),
@@ -67,15 +134,20 @@ exports.run = async (bot, msg, args) => {
 	}
 }
 
+/**
+ * TODO: Merge Job___Value functions....
+ */
+
 function JobStatValue(fieldNames, fieldValues) {
 	let string = "```xl\n";
 
+	// 3 = HP to 9 = DEF
 	for (var i = 3; i <= 9; i++) {
 		let space = "";
 		var numSpace = 0;
 
 		if (fieldNames[i].length <= 4) {
-			// 4 is the highest amount of characters for a job
+			// 4 is the highest amount of characters for a stat
 			numSpace = 4 - fieldNames[i].length;
 		} 
 
@@ -106,15 +178,9 @@ function JobStatValue(fieldNames, fieldValues) {
 function JobAutoValue(fieldNames, fieldValues) {
 	let string = "```xl\n";
 
-	for (var i = 0; i < Things.length; i++) {
-		Things[i]
-	}
-
-
-
+	string += "```";
 	return string;
 }
-
 
 function TextCaptialiseNCut(arr) {
 	let string = [];
