@@ -11,7 +11,9 @@ exports.run = async (bot, msg, args) => {
 	if (typeof args !== 'undefined' && args.length > 0) {
 
 		let jobAutoes = {};
-		let jobAutoTypes = ['Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift'];
+		let jobAutoes2 = {};
+		let jobAutoes3 = {};
+		let jobAutoTypes = ['Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift', 'Name', 'Range', 'Attack', 'Break Power', 'Crit Chance', 'Added Effects'];
 
 		let jobQuery = args[0];
 		let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
@@ -20,8 +22,11 @@ exports.run = async (bot, msg, args) => {
 		let jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
 		let jobOrbSet1 = JSON.stringify(jobDB[jobQuery]['job-orb-set-1']).replace(/"/g, '');
 		let jobOrbSet2 =JSON.stringify(jobDB[jobQuery]['job-orb-set-2']).replace(/"/g, '');
+		let jobOrbSet3 =JSON.stringify(jobDB[jobQuery]['job-orb-set-3']).replace(/"/g, '');
 		let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
 
+
+		// this can be better... ------------//
 		// seperate columns into separate categories
 		var jobEE = [];  // element enhance
 		var jobERES = []; //  resist
@@ -33,9 +38,29 @@ exports.run = async (bot, msg, args) => {
 		var jobDEF = []; // defense
 		var jobOTH = []; // other
 		var jobCHG = []; // job change shift
+
+		var jobULTname = [];
+		var jobULTrange = [];
+		var jobULTatk = [];
+		var jobULTbrk = [];
+		var jobULTcrit = [];
+		var jobULTeff = [];
+		//-------------------------//
+		
+		var jobUltimateFields = []; // job ultimate
 		var jobFieldNames = []; 
 		var jobFieldValues = [];
 
+		// 2D array setup for category headings
+		var jobCategories = [jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG, jobULTname, jobULTrange, jobULTatk, jobULTbrk, jobULTcrit, jobULTeff]; 
+
+
+		var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`;
+
+		if (jobQuery === "5-the-azure-witch") jobDesc += ` | ${jobOrbSet3}`;
+
+
+		// TODO: Put all if statement json queries in array and loop through each query with its respective array.
 		for (var fields in jobDB[jobQuery]) {
 			jobFieldNames.push(fields);
 			jobFieldValues.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
@@ -60,7 +85,7 @@ exports.run = async (bot, msg, args) => {
 			}
 
 			// push headings
-			if (/job-drive-heal/g.test(fields) == true) {
+			if (/job-heal-drive/g.test(fields) == true) {
 				jobDRI.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
 			}
 
@@ -87,17 +112,44 @@ exports.run = async (bot, msg, args) => {
 						// push headings
 			if (/job-change-shift/g.test(fields) == true) {
 				jobCHG.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}			
-		}
+			}		
 
-		// 2D array setup for category headings
-		var jobCategories = [jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG]; 
+			if (/job-ultimate-name/g.test(fields) == true) {
+				jobULTname.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+
+			if (/job-ultimate-range/g.test(fields) == true) {
+				jobULTrange.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+
+			if (/job-ultimate-atk/g.test(fields) == true) {
+				jobULTatk.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+
+			if (/job-ultimate-brk/g.test(fields) == true) {
+				jobULTbrk.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+
+			if (/job-ultimate-crit/g.test(fields) == true) {
+				jobULTcrit.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+
+			if (/job-ultimate-eff/g.test(fields) == true) {
+				jobULTeff.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			}	
+		}
 
 		for (var i = 0; i < jobAutoTypes.length; i++) {
-			jobAutoes[jobAutoTypes[i]] = jobCategories[i];
+			if (i <= 4) {
+				jobAutoes[jobAutoTypes[i]] = jobCategories[i];
+			} else if (i >= 5 && i <= 9) {
+				jobAutoes2[jobAutoTypes[i]] = jobCategories[i];
+			} else {
+				jobAutoes3[jobAutoTypes[i]] = jobCategories[i];
+			}
 		}
 
-		jobFieldNames = TextCaptialiseNCut(jobFieldNames);
+		jobFieldNames = TextCaptialiseNCut(jobFieldNames, /JOB-/g);
 
 		try {
 			msg.channel.send({embed: {
@@ -109,14 +161,22 @@ exports.run = async (bot, msg, args) => {
 			    thumbnail: {
 			    	url: jobThumbUrl
 			    },
-			    description: `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`,
+			    description: jobDesc,
 			    fields: [{
 			    	name:"Stats:",
-			        value: JobStatValue(jobFieldNames, jobFieldValues)
+			        value: JobStatValue(jobFieldNames, jobFieldValues, 3, 9)
 			      },
 			      {
 			    	name:"Auto-Abilities:",
 			        value: JobAutoValue(jobAutoes, jobFieldValues)
+			      },
+			      {
+			    	name:"-",
+			        value: JobAutoValue(jobAutoes2, jobFieldValues)
+			      },
+			      {
+			      	name:"Ultimate:",
+			      	value: JobAutoValue(jobAutoes3, jobFieldValues)
 			      }
 			    ],
 			    timestamp: new Date(),
@@ -138,11 +198,12 @@ exports.run = async (bot, msg, args) => {
  * TODO: Merge Job___Value functions....
  */
 
-function JobStatValue(fieldNames, fieldValues) {
+function JobStatValue(fieldNames, fieldValues, lowerRange, UpperRange) {
 	let string = "```xl\n";
 
 	// 3 = HP to 9 = DEF
-	for (var i = 3; i <= 9; i++) {
+	// seperate stat values into seperate array (instead of calling from whole db)?
+	for (var i = lowerRange; i <= UpperRange; i++) {
 		let space = "";
 		var numSpace = 0;
 
@@ -151,24 +212,15 @@ function JobStatValue(fieldNames, fieldValues) {
 			numSpace = 4 - fieldNames[i].length;
 		} 
 
-		space += `| ${fieldNames[i]}`;
-		for (var j = 0; j < numSpace; j++) {
-			space += " ";
-		}
+		string += `| ${InsertSpaces(fieldNames[i], numSpace)} |`;
 
-		string += `${space} |`;
-
+		// can be better....
 		numSpace = 0;
 		if (fieldValues[i].length <= 5) {
 			numSpace = 5 - fieldValues[i].length;
-		}
+		} 
 
-		string += ` ${fieldValues[i]}`;
-		space = "";
-		for (var j = 0; j < numSpace; j++) {
-			space += " ";
-		}
-		string += `${space} |\n`;
+		string += ` ${InsertSpaces(fieldValues[i], numSpace)}\n`;
 	}
 	string += "```";
 
@@ -176,18 +228,95 @@ function JobStatValue(fieldNames, fieldValues) {
 }
 
 function JobAutoValue(fieldNames, fieldValues) {
-	let string = "```xl\n";
+
+	//console.log(fieldNames);
+	let string = "```\n";
+
+	for (var key in fieldNames) {
+		let space = "";
+		var first = true;
+		var numSpace = 0;
+
+		if (key.length <= 16) {
+			// 16 is the larges amount of characters for a heading
+			numSpace = 16 - key.length;
+		}
+
+		string += `| ${InsertSpaces(key, numSpace)} |`
+
+		// iterate values in a category
+		for (var i = 0; i < fieldNames[key].length; i++) {
+			numSpace = 0;
+			if (fieldNames[key][i].length <= 19) numSpace = 19 - fieldNames[key][i].length;
+			console.log(fieldNames[key]);
+			console.log(fieldNames[key][i]);
+			console.log(numSpace);
+		
+			if (first == true) {
+				// print the first value that isnt "-" otherwise print the last value of the column
+				if (fieldNames[key][i] !== '-') { 
+					// split string by "/" delimiter 
+					if ((/\//g.test(fieldNames[key][i])) === true) {
+						//console.log(test);
+						var tmp = fieldNames[key][i].split('\/');
+
+						string += ` ${tmp[0]}\n`
+						for (var j = 1; j < tmp.length; j++) {
+							string += `|                  | ${tmp[j]}\n`; // 18 spaces
+						}
+					} else {
+						string += ` ${fieldNames[key][i]}\n`;
+					}
+
+					first = false;
+					i++;
+				} else if (i === fieldNames[key].length - 1) {
+					string += ` ${fieldNames[key][i]}\n`;
+					first = false;
+					i++;
+				} 
+			}
+
+
+			if (first == false) {
+				if (i >= 0 && fieldNames[key][i] === '-' || i >= 0 && fieldNames[key][i] === undefined) {
+					continue; // skip input
+				} else {
+					// check if we're at the last value of the key
+					// if (i === fieldNames[key].length - 1) {
+					// 	continue;
+					// } else {
+						string += `|                  | ${fieldNames[key][i]}\n`; // 18 spaces
+					//}
+				}
+			}
+		}
+	}
+
 
 	string += "```";
 	return string;
 }
 
-function TextCaptialiseNCut(arr) {
+function TextCaptialiseNCut(arr, regex) {
 	let string = [];
 	for (var i = 0; i < arr.length; i++) {
 		let tmp = "";
 		tmp += arr[i].toUpperCase();
-		string.push(tmp.replace(/JOB-/g, ''));
+		string.push(tmp.replace(regex, ''));
 	}
 	return string;
 }
+
+function InsertSpaces(string, numSpace) {
+	let space = "";
+
+	// generate number of spaces after heading 
+	for (var i = 0; i < numSpace; i++) {
+		space += " ";
+	}
+
+	string += `${space}`;
+
+	return string;
+} 
