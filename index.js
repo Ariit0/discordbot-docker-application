@@ -21,10 +21,13 @@ fs.readdir('./src/commands/', (err, files) => {
 
 	// take the name of the javascript file as command
 	files.forEach(file => {
-		let ev = require(`./src/commands/${file}`)
-		let evName = file.split('.')[0];
+		// file must be a JS file otherwise ignore it
+		if (!file.endsWith(".js")) return;
+
+		let cmd = require(`./src/commands/${file}`)
+		let cmdName = file.split('.')[0];
 		// Call events with variable number of arguments
-		bot.on(evName, (...args) => eventFunction.run(bot, ...args));
+		bot.on(cmdName, (...args) => eventFunction.run(bot, ...args));
 	});
 });
 
