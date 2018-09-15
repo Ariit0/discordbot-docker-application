@@ -12,7 +12,7 @@ var doc = new Sheet('1V-eQTG1UNTDnG-lrGwd_Iby5rwLZlpZ0nxpuhobp_r4');
 
 exports.run = async (bot, msg, args) => {
 	// only owner can use this command
-	if (msg.author.id !== config.ownerID) return;
+	//if (msg.author.id !== config.ownerID) return;
 
 	doc.useServiceAccountAuth(auth, function (err)  {
 		doc.getRows(1, function (err, rows) {
