@@ -11,11 +11,13 @@ exports.run = async (bot, msg, args) => {
 	if (typeof args !== 'undefined' && args.length > 0) {
 
 		let jobAutoes = {};
+		let jobAutoes1 = {};
 		let jobAutoes2 = {};
 		let jobAutoes3 = {};
-		let jobAutoTypes = ['Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift', 'Name', 'Range', 'Attack', 'Break Power', 'Crit Chance', 'Added Effects'];
+		let jobAutoTypes = ['HP', 'Attack', 'Break Power', 'Magic', 'Crit Chance', 'Speed', 'Defense','Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift', 'Name', 'Range', 'Attack', 'Break Power', 'Crit Chance', 'Added Effects'];
 
-		let jobQuery = args[0];
+		let jobQuery = args[0]; // TODO: error check this....
+
 		let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
 		let jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
 		let jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
@@ -26,6 +28,13 @@ exports.run = async (bot, msg, args) => {
 		let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
 
 		// seperate columns into separate categories
+		var jobShp = [];
+		var jobSatk = [];
+		var jobSbrk = [];
+		var jobSmag = [];
+		var jobScrt = [];
+		var jobSspd = [];
+		var jobSdef = [];
 		var jobEE = [];  	// element enhance
 		var jobERES = []; 	//  resist
 		var jobARES = []; 	// ailment resist
@@ -43,78 +52,103 @@ exports.run = async (bot, msg, args) => {
 		var jobULTbrk = [];
 		var jobULTcrit = [];
 		var jobULTeff = [];
-		
-		var jobUltimateFields = []; // job ultimate
-		var jobFieldNames = []; 
-		var jobFieldValues = [];
-
 		// 2D array setup for category headings
-		var jobCategories = [jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG, jobULTname, jobULTrange, jobULTatk, jobULTbrk, jobULTcrit, jobULTeff]; 
+		var jobCategories = [jobShp, jobSatk, jobSbrk, jobSmag, jobScrt, jobSspd, jobSdef, jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG, jobULTname, jobULTrange, jobULTatk, jobULTbrk, jobULTcrit, jobULTeff]; 
 		
 		// specific case for the azure witch - the only job with 3 orbsets so far...
 		var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`;
 		if (jobQuery === "5-the-azure-witch") jobDesc += ` | ${jobOrbSet3}`;
 
+		// iterates through each row property
 		for (var fields in jobDB[jobQuery]) {
 			let fieldValues =  JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, '');
-
-			jobFieldNames.push(fields);
-			jobFieldValues.push(fieldValues); // remove this later
-
 			// generate datasets
 			JobRegex(fields, jobCategories, fieldValues)
 		}
-
+		// splits headings into seperate javascript objects
+		// this is done due to the discord embed field character limit (1024 characters)
 		for (var i = 0; i < jobAutoTypes.length; i++) {
-			if (i <= 4) {
+			if (i <= 6) { 
 				jobAutoes[jobAutoTypes[i]] = jobCategories[i];
-			} else if (i >= 5 && i <= 9) {
+			} else if (i >= 7 && i <= 11) {
+				jobAutoes1[jobAutoTypes[i]] = jobCategories[i];
+			} else if (i >= 12 && i <= 16) {
 				jobAutoes2[jobAutoTypes[i]] = jobCategories[i];
 			} else {
 				jobAutoes3[jobAutoTypes[i]] = jobCategories[i];
 			}
 		}
 
-		jobFieldNames = TextCaptialiseNCut(jobFieldNames, /JOB-/g);
+		if (args.length === 1) {
+			try {
+				msg.channel.send({embed: {
+				    color: 3447003,
+				    author: {
+				      name: jobName,
+				      icon_url: jobClassIcon
+				    },
+				    thumbnail: {
+				    	url: jobThumbUrl
+				    },
+				    description: jobDesc,
+				    fields: [{
+				    	name:"Stats:",
+				        value: JobAutoValue(jobAutoes)
+				      },
+				      {
+				    	name:"Auto-Abilities:",
+				        value: JobAutoValue(jobAutoes1)
+				      },
+				      {
+				    	name:"-",
+				        value: JobAutoValue(jobAutoes2)
+				      },
+				      {
+				      	name:"Ultimate:",
+				      	value: JobAutoValue(jobAutoes3)
+				      }
+				    ],
+				    timestamp: new Date(),
+				    footer: {
+				      icon_url: msg.author.avatarURL,
+				      text: msg.author.username + "'s request"
+				    }
+				  }
+				});
+			} catch (e) {
+				console.log(e);
+			}
+		} else {
+			try {
+				msg.channel.send({embed: {
+				    color: 3447003,
+				    author: {
+				      name: jobName,
+				      icon_url: jobClassIcon
+				    },
+				    thumbnail: {
+				    	url: jobThumbUrl
+				    },
+				    description: jobDesc,
+				    fields: [{
+				    	name:"Stats:",
+				        value: JobAutoValue(test)
+				      }
+				    ],
+				    timestamp: new Date(),
+				    footer: {
+				      icon_url: msg.author.avatarURL,
+				      text: msg.author.username + "'s request"
+				    }
+				  }
+				});
+			} catch (e) {
+				console.log(e);
+			}
 
-		try {
-			msg.channel.send({embed: {
-			    color: 3447003,
-			    author: {
-			      name: jobName,
-			      icon_url: jobClassIcon
-			    },
-			    thumbnail: {
-			    	url: jobThumbUrl
-			    },
-			    description: jobDesc,
-			    fields: [{
-			    	name:"Stats:",
-			        value: JobStatValue(jobFieldNames, jobFieldValues, 3, 9)
-			      },
-			      {
-			    	name:"Auto-Abilities:",
-			        value: JobAutoValue(jobAutoes)
-			      },
-			      {
-			    	name:"-",
-			        value: JobAutoValue(jobAutoes2)
-			      },
-			      {
-			      	name:"Ultimate:",
-			      	value: JobAutoValue(jobAutoes3)
-			      }
-			    ],
-			    timestamp: new Date(),
-			    footer: {
-			      icon_url: msg.author.avatarURL,
-			      text: msg.author.username + "'s request"
-			    }
-			  }
-			});
-		} catch (e) {
-			console.log(e);
+
 		}
+
 	} else { // print list of jobs + navigation with reaction
 		console.log('keepo');
 	}
@@ -123,7 +157,7 @@ exports.run = async (bot, msg, args) => {
 
 /**
  * Pushes matching regex strings to respective arrays
- * @param  {[type]} fields [description]
+ * @param  {} fields [description]
  * @param  {[type]} arr    [description]
  * @param  {[type]} val    [description]
  * @return {[type]}        [description]
@@ -132,6 +166,13 @@ function JobRegex(fields, arr, val) {
 	// Test whether at least one element passes the test and
 	// if it does push the match to the respective array
 	return [
+		/job-hp/g,
+		/job-atk/g,
+		/job-brk/g,
+		/job-mag/g,
+		/job-crit/g,
+		/job-spd/g,
+		/job-def/g,
 		/job-[a-z]*-boost/g,
 		/job-[a-z]*-resist/g,
 		/job-ailment-avert/g,
@@ -159,44 +200,13 @@ function JobRegex(fields, arr, val) {
 	});
 }
 
-
 /**
- * TODO: Merge Job___Value functions....
+ * [JobAutoValue description]
+ * @param {[type]} fieldNames [description]
  */
-
-function JobStatValue(fieldNames, fieldValues, lowerRange, UpperRange) {
-	let string = "```xl\n";
-
-	// 3 = HP to 9 = DEF
-	// seperate stat values into seperate array (instead of calling from whole db)?
-	for (var i = lowerRange; i <= UpperRange; i++) {
-		let space = "";
-		var numSpace = 0;
-
-		if (fieldNames[i].length <= 4) {
-			// 4 is the highest amount of characters for a stat
-			numSpace = 4 - fieldNames[i].length;
-		} 
-
-		string += `| ${InsertSpaces(fieldNames[i], numSpace)} |`;
-
-		// can be better....
-		numSpace = 0;
-		if (fieldValues[i].length <= 5) {
-			numSpace = 5 - fieldValues[i].length;
-		} 
-
-		string += ` ${InsertSpaces(fieldValues[i], numSpace)}\n`;
-	}
-	string += "```";
-
-	return string;
-}
-
 function JobAutoValue(fieldNames) {
 
-	//console.log(fieldNames);
-	let string = "```\n";
+	let string = "```xl\n";
 
 	for (var key in fieldNames) {
 		let space = "";
@@ -214,9 +224,6 @@ function JobAutoValue(fieldNames) {
 		for (var i = 0; i < fieldNames[key].length; i++) {
 			numSpace = 0;
 			if (fieldNames[key][i].length <= 19) numSpace = 19 - fieldNames[key][i].length;
-			// console.log(fieldNames[key]);
-			// console.log(fieldNames[key][i]);
-			// console.log(numSpace);
 		
 			if (first == true) {
 				// print the first value that isnt "-" otherwise print the last value of the column
@@ -242,7 +249,6 @@ function JobAutoValue(fieldNames) {
 				} 
 			}
 
-
 			if (first == false) {
 				if (i >= 0 && fieldNames[key][i] === '-' || i >= 0 && fieldNames[key][i] === undefined) {
 					continue; // skip input
@@ -253,21 +259,15 @@ function JobAutoValue(fieldNames) {
 		}
 	}
 
-
 	string += "```";
 	return string;
 }
 
-function TextCaptialiseNCut(arr, regex) {
-	let string = [];
-	for (var i = 0; i < arr.length; i++) {
-		let tmp = "";
-		tmp += arr[i].toUpperCase();
-		string.push(tmp.replace(regex, ''));
-	}
-	return string;
-}
-
+/**
+ * Helper function that inserts are set amount of spaces
+ * @param {string} string   
+ * @param {int} numSpace 
+ */
 function InsertSpaces(string, numSpace) {
 	let space = "";
 
