@@ -25,19 +25,17 @@ exports.run = async (bot, msg, args) => {
 		let jobOrbSet3 =JSON.stringify(jobDB[jobQuery]['job-orb-set-3']).replace(/"/g, '');
 		let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
 
-
-		// this can be better... ------------//
 		// seperate columns into separate categories
-		var jobEE = [];  // element enhance
-		var jobERES = []; //  resist
-		var jobARES = []; // ailment resist
-		var jobCLU = []; //  cluch boons
-		var jobDRI = []; // drive heal
-		var jobDMG = []; // damage
-		var jobBRK = []; // break
-		var jobDEF = []; // defense
-		var jobOTH = []; // other
-		var jobCHG = []; // job change shift
+		var jobEE = [];  	// element enhance
+		var jobERES = []; 	//  resist
+		var jobARES = []; 	// ailment resist
+		var jobCLU = []; 	//  cluch boons
+		var jobDRI = []; 	// drive heal
+		var jobDMG = []; 	// damage
+		var jobBRK = []; 	// break
+		var jobDEF = []; 	// defense
+		var jobOTH = []; 	// other
+		var jobCHG = []; 	// job change shift
 
 		var jobULTname = [];
 		var jobULTrange = [];
@@ -45,7 +43,6 @@ exports.run = async (bot, msg, args) => {
 		var jobULTbrk = [];
 		var jobULTcrit = [];
 		var jobULTeff = [];
-		//-------------------------//
 		
 		var jobUltimateFields = []; // job ultimate
 		var jobFieldNames = []; 
@@ -53,90 +50,19 @@ exports.run = async (bot, msg, args) => {
 
 		// 2D array setup for category headings
 		var jobCategories = [jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG, jobULTname, jobULTrange, jobULTatk, jobULTbrk, jobULTcrit, jobULTeff]; 
-
-
+		
+		// specific case for the azure witch - the only job with 3 orbsets so far...
 		var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`;
-
 		if (jobQuery === "5-the-azure-witch") jobDesc += ` | ${jobOrbSet3}`;
 
-
-		// TODO: Put all if statement json queries in array and loop through each query with its respective array.
 		for (var fields in jobDB[jobQuery]) {
+			let fieldValues =  JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, '');
+
 			jobFieldNames.push(fields);
-			jobFieldValues.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
+			jobFieldValues.push(fieldValues); // remove this later
 
-			// push EE headings
-			if (/job-[a-z]*-boost/g.test(fields) == true) {
-				jobEE.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-			// push RES headings
-			if (/job-[a-z]*-resist/g.test(fields) == true) {
-				jobERES.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-			if (/job-ailment-avert/g.test(fields) == true) {
-				jobARES.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-			// push clutch boons headings
-			if (/job-clutch-boons/g.test(fields) == true) {
-				jobCLU.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-			// push headings
-			if (/job-heal-drive/g.test(fields) == true) {
-				jobDRI.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-			// push headings
-			if (/job-auto-damage/g.test(fields) == true) {
-				jobDMG.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-						// push headings
-			if (/job-auto-break/g.test(fields) == true) {
-				jobBRK.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-						// push headings
-			if (/job-auto-defense/g.test(fields) == true) {
-				jobDEF.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-						// push headings
-			if (/job-auto-other/g.test(fields) == true) {
-				jobOTH.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}
-
-						// push headings
-			if (/job-change-shift/g.test(fields) == true) {
-				jobCHG.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}		
-
-			if (/job-ultimate-name/g.test(fields) == true) {
-				jobULTname.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
-
-			if (/job-ultimate-range/g.test(fields) == true) {
-				jobULTrange.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
-
-			if (/job-ultimate-atk/g.test(fields) == true) {
-				jobULTatk.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
-
-			if (/job-ultimate-brk/g.test(fields) == true) {
-				jobULTbrk.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
-
-			if (/job-ultimate-crit/g.test(fields) == true) {
-				jobULTcrit.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
-
-			if (/job-ultimate-eff/g.test(fields) == true) {
-				jobULTeff.push(JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, ''));
-			}	
+			// generate datasets
+			JobRegex(fields, jobCategories, fieldValues)
 		}
 
 		for (var i = 0; i < jobAutoTypes.length; i++) {
@@ -168,15 +94,15 @@ exports.run = async (bot, msg, args) => {
 			      },
 			      {
 			    	name:"Auto-Abilities:",
-			        value: JobAutoValue(jobAutoes, jobFieldValues)
+			        value: JobAutoValue(jobAutoes)
 			      },
 			      {
 			    	name:"-",
-			        value: JobAutoValue(jobAutoes2, jobFieldValues)
+			        value: JobAutoValue(jobAutoes2)
 			      },
 			      {
 			      	name:"Ultimate:",
-			      	value: JobAutoValue(jobAutoes3, jobFieldValues)
+			      	value: JobAutoValue(jobAutoes3)
 			      }
 			    ],
 			    timestamp: new Date(),
@@ -193,6 +119,46 @@ exports.run = async (bot, msg, args) => {
 		console.log('keepo');
 	}
 }
+
+
+/**
+ * Pushes matching regex strings to respective arrays
+ * @param  {[type]} fields [description]
+ * @param  {[type]} arr    [description]
+ * @param  {[type]} val    [description]
+ * @return {[type]}        [description]
+ */
+function JobRegex(fields, arr, val) {
+	// Test whether at least one element passes the test and
+	// if it does push the match to the respective array
+	return [
+		/job-[a-z]*-boost/g,
+		/job-[a-z]*-resist/g,
+		/job-ailment-avert/g,
+		/job-clutch-boons/g,
+		/job-heal-drive/g,
+		/job-auto-damage/g,
+		/job-auto-break/g,
+		/job-auto-defense/g,
+		/job-auto-other/g,
+		/job-change-shift/g,
+		/job-ultimate-name/g,
+		/job-ultimate-range/g,
+		/job-ultimate-atk/g,
+		/job-ultimate-brk/g,
+		/job-ultimate-crit/g,
+		/job-ultimate-eff/g
+	].some(function(reg, i) {
+		try {
+			if (reg.test(fields) === true) {
+				return arr[i].push(val);
+			} 
+		} catch (e) {
+			console.log(e);
+		}
+	});
+}
+
 
 /**
  * TODO: Merge Job___Value functions....
@@ -227,7 +193,7 @@ function JobStatValue(fieldNames, fieldValues, lowerRange, UpperRange) {
 	return string;
 }
 
-function JobAutoValue(fieldNames, fieldValues) {
+function JobAutoValue(fieldNames) {
 
 	//console.log(fieldNames);
 	let string = "```\n";
@@ -248,16 +214,15 @@ function JobAutoValue(fieldNames, fieldValues) {
 		for (var i = 0; i < fieldNames[key].length; i++) {
 			numSpace = 0;
 			if (fieldNames[key][i].length <= 19) numSpace = 19 - fieldNames[key][i].length;
-			console.log(fieldNames[key]);
-			console.log(fieldNames[key][i]);
-			console.log(numSpace);
+			// console.log(fieldNames[key]);
+			// console.log(fieldNames[key][i]);
+			// console.log(numSpace);
 		
 			if (first == true) {
 				// print the first value that isnt "-" otherwise print the last value of the column
 				if (fieldNames[key][i] !== '-') { 
 					// split string by "/" delimiter 
 					if ((/\//g.test(fieldNames[key][i])) === true) {
-						//console.log(test);
 						var tmp = fieldNames[key][i].split('\/');
 
 						string += ` ${tmp[0]}\n`
@@ -282,12 +247,7 @@ function JobAutoValue(fieldNames, fieldValues) {
 				if (i >= 0 && fieldNames[key][i] === '-' || i >= 0 && fieldNames[key][i] === undefined) {
 					continue; // skip input
 				} else {
-					// check if we're at the last value of the key
-					// if (i === fieldNames[key].length - 1) {
-					// 	continue;
-					// } else {
-						string += `|                  | ${fieldNames[key][i]}\n`; // 18 spaces
-					//}
+					string += `|                  | ${fieldNames[key][i]}\n`; // 18 spaces
 				}
 			}
 		}

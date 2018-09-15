@@ -8,7 +8,7 @@ const auth = require('../client_secret.json');
 const fs = require('fs');
 
 // create sheet object using spreadsheet ID
-var doc = new Sheet('1V-eQTG1UNTDnG-lrGwd_Iby5rwLZlpZ0nxpuhobp_r4');
+var doc = new Sheet(config.sheetID);
 
 exports.run = async (bot, msg, args) => {
 	// only owner can use this command
