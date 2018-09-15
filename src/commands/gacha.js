@@ -1,42 +1,47 @@
-const Discord = require('discord.js');
-const myToken = require('../imgur_secret.json');
 const config  = require('../config.json');
-const superagent = require('superagent');
+const request = require('superagent');
 
+/**
+ * Sends a GET request (using superagent) to imgur API and randomly pick an image + details
+ * to post as a discord embed message
+ * @param  {Discord} bot  discord bot object
+ * @param  {?object} msg  discord message response object 
+ * @param  {?object} args discord command handler arguement
+ * @return {[type]}      [description]
+ */
 exports.run = async (bot, msg, args) => {
+	// should cache requests instead of constantly making request calls to the api
+	// there is a chance to be rate limited....
 
+	var links = [];
+	var desc = [];
 
+	// http get request using superagent
+	let {body} = await request
+	.get(`https://api.imgur.com/3/album/${config.albumHash}/images`)
+	.set('Authorization', `Client-ID ${config.imgurID}`)
+	.accept('application/json');
 
-	superagent
-	.get(`https://api.imgur.com/3/gallery/t/cats`)
-	.set('Authorization', `Client-ID 3430fb97cadaee8`)
-	.then(res => {
-		console.log(res);
-	});
+	// push data to arry
+	for (var i = 0; i < body.data.length; i++) {
+		desc.push(body.data[i].description.replace(/\s/g, ''));
+		links.push(body.data[i].link);
+	}
 
-	  // get (url) {
-	  //   return fetch(rootUrl + url, {
-	  //     headers: {
-	  //       'Authorization': `${config.imgurID} ` + apiKey
-	  //     }
-	  //   })
-	  //   .then((response) => {
-	  //     return response.json()
-	  //   })
-	  // }
+	// generate random value
+	let max = links.length - 1;
+	let min = 0;
+	var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
-
-
-
-
-	// let embed = new Discord.RichEmbed()
-	// .setColor("#ff9900")
-	// .setTitle("Test")
-	// .setImage('https://imgur.com/gallery/TnAHNiv');
+	// use rich embed builder to build embed message 
+	let embed = new Discord.RichEmbed()
+	.setColor("#ff9900")
+	.setTitle("Summoned an ability card!",)
+	.setURL(desc[randomNum])
+	.setImage(links[randomNum])
+	.setTimestamp()
+	.setFooter(msg.author.username + "'s request", msg.author.avatarURL);
 	
 	
-	// msg.channel.send('https://mobius.gamepedia.com/Cactuar_(Card)');
-	
-	// console.log(body);
-
+	msg.channel.send({embed});
 }
