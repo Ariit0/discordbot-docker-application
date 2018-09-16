@@ -22,7 +22,7 @@ exports.run = async (bot, msg, args) => {
 			
 			message += `\`${cmdName}\` : ${desc[i]}\n`;
 		});
-		msg.channel.send(`${msg.author.toString()}, Send you a DM with information.`).catch(console.error);
+		msg.channel.send(`${msg.author.toString()}, Sent you a DM with information.`).catch(console.error);
 		msg.author.send(message).catch(console.error);
 	});
 }
