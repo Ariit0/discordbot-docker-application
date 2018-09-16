@@ -21,7 +21,6 @@ exports.run = async (bot, msg, args) => {
 			let cmdName = file.split('.')[0];
 			
 			message += `\`${cmdName}\` : ${desc[i]}\n`;
-			console.log(cmdName);
 		});
 		msg.channel.send(`${msg.author.toString()}, Send you a DM with information.`).catch(console.error);
 		msg.author.send(message).catch(console.error);
