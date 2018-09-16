@@ -45,11 +45,11 @@ bot.on('message', async (msg) => {
     const cmd = args.shift().toLowerCase();
 
 	try {
-		// TODO: MAKE SURE ONLY COMMANDS FROM ./src/commands/ ARE CALLED
 		let cmdFile = require(`./src/commands/${cmd}.js`);
 		cmdFile.run(bot, msg, args);
 	} catch (e) {
 		console.error(e);
+		msg.channel.send(`:x: \`${cmd}\` is an invalid command.`).catch(console.error);
 	}
 });
 

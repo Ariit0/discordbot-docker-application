@@ -133,7 +133,6 @@ exports.run = async (bot, msg, args) => {
 		}
 
 	} else { // sends a direct message of the list of queryable jobs
-
 		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`+stats\` \`+auto\` \`+ult\` | used to filter specific data types\nList of queryable jobs:\n";
 		let index = 0;
 		for (let job in jobDB) {
@@ -201,7 +200,6 @@ function PrintJobAutoValues(fieldNames) {
 	let string = "```xl\n";
 
 	for (var key in fieldNames) {
-		let space = "";
 		var first = true; // first value of a category
 		var numSpace = 0;
 
@@ -240,7 +238,7 @@ function PrintJobAutoValues(fieldNames) {
 					i++;
 				} 
 			}
-
+			// formatting for a data that isnt on the first line
 			if (first == false) {
 				if (i >= 0 && fieldNames[key][i] === '-' || i >= 0 && fieldNames[key][i] === undefined) {
 					continue; // skip input

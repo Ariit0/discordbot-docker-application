@@ -52,7 +52,6 @@ exports.run = async (bot, msg, args) => {
 				keys[k] = data[i];
 				k++;
 			}
-			console.log(colHeading.length);
 			// seperates child keys and child object pairs into seperate arrays (can be done better....just quick solution)
 			var singleRows = [];
 			var headerArray = [];
