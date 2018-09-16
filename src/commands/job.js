@@ -96,10 +96,9 @@ exports.run = async (bot, msg, args) => {
 				msg.channel.send(embedMsg.addField("Stats", PrintJobAutoValues(jobAutoes))
 										 .addField("Auto-Abilities", PrintJobAutoValues(jobAutoes1))
 										 .addField("-", PrintJobAutoValues(jobAutoes2))
-										 .addField("Ultimate", PrintJobAutoValues(jobAutoes3)));
+										 .addField("Ultimate", PrintJobAutoValues(jobAutoes3))).catch(console.error);
 
 			} else if (args.length === 2){ // filtered embed message based on user arg
-
 				try {
 					var isMatch = false
 
@@ -110,10 +109,10 @@ exports.run = async (bot, msg, args) => {
 							if (i !== 1) { // embed message for stats and ultimate 
 								let index = i;
 								if (i == 2) index = i+1;
-								msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobAutoValues(jobFields[index])));
+								msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobAutoValues(jobFields[index]))).catch(console.error);
 							} else { // embed message for auto-abilties
 							 	msg.channel.send(embedMsg.addField(jobFieldHeadings[i], PrintJobAutoValues(jobFields[i]))
-								 		 .addField(jobFieldHeadings[i+1], PrintJobAutoValues(jobFields[i+1])));
+								 		 .addField(jobFieldHeadings[i+1], PrintJobAutoValues(jobFields[i+1]))).catch(console.error);
 							}
 							break;
 						} else {
@@ -125,13 +124,12 @@ exports.run = async (bot, msg, args) => {
 
 				} catch (argError) {
 					console.log(argError);
-					msg.channel.send(`:x: \`${args[1]}\` is an invalid argument.`);
+					msg.channel.send(`:x: \`${args[1]}\` is an invalid argument.`).catch(console.error);
 				}
 			}
-
 		} catch (e) {
 			console.log(e);
-			msg.channel.send(`:x: \`${jobQuery}\` is an invalid job.`);
+			msg.channel.send(`:x: \`${jobQuery}\` is an invalid job.`).catch(console.error);
 		}
 
 	} else { // sends a direct message of the list of queryable jobs
@@ -143,8 +141,8 @@ exports.run = async (bot, msg, args) => {
 			message += `\t${index}.\t\`${job}\`\n`;
 		}
 		message += "";
-		msg.channel.send(`${msg.author.toString()}, Send you a DM with information.`);
-		msg.author.send(message);
+		msg.channel.send(`${msg.author.toString()}, Send you a DM with information.`).catch(console.error);
+		msg.author.send(message).catch(console.error);
 	}
 }
 
@@ -152,9 +150,9 @@ exports.run = async (bot, msg, args) => {
 /**
  * Pushes matching regex strings to respective arrays
  * @param  {Object} fields 
- * @param  {Array} arr    
- * @param  {String} val   
- * @return {Object}        
+ * @param  {Array} 	arr    array for the string to be pushed
+ * @param  {String} val   sting the regex is tested against
+ * @return {Object} ...	 pushed array result      
  */
 function JobRegex(fields, arr, val) {
 	// Test whether at least one element passes the test and
@@ -196,7 +194,7 @@ function JobRegex(fields, arr, val) {
 
 /**
  * Responsible for generating code block format to be displayed in the embed message
- * @param {[type]} fieldNames [description]
+ * @param {Array} fieldNames rowdata
  */
 function PrintJobAutoValues(fieldNames) {
 

@@ -64,6 +64,13 @@ bot.on('message', async (msg) => {
 	}
 });
 
+
+/**
+ * Captures any errors occuring within the application
+ */
+bot.on('error', (e) => console.error(e));
+
+
 /**
  * Login bot 
  */

@@ -54,7 +54,6 @@ exports.run = async (bot, msg, args) => {
 			}
 			console.log(colHeading.length);
 			// seperates child keys and child object pairs into seperate arrays (can be done better....just quick solution)
-			// improve naming of variables...
 			var singleRows = [];
 			var headerArray = [];
 			var numRow = keys.length;
@@ -105,6 +104,6 @@ exports.run = async (bot, msg, args) => {
 			});
 		});
 	});
-				msg.channel.send('DB Updated');
+				msg.channel.send('DB Updated').catch(console.error);
 }
 
