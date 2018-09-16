@@ -1,6 +1,5 @@
 /**
  * This command is responsible for manually updating the JSON database 
- * TODO : Refactor code.......
  */
 const config  = require('../config.json');
 const Sheet = require('google-spreadsheet');
@@ -12,7 +11,8 @@ var doc = new Sheet(config.sheetID);
 
 exports.run = async (bot, msg, args) => {
 	// only owner can use this command
-	//if (msg.author.id !== config.ownerID) return;
+	// disabled for assessment piece
+	// if (msg.author.id !== config.ownerID) return;
 
 	doc.useServiceAccountAuth(auth, function (err)  {
 		doc.getRows(1, function (err, rows) {
@@ -24,7 +24,7 @@ exports.run = async (bot, msg, args) => {
 			var headings = [];
 			var data = [];
 			var keys = [];
-
+			// regex to test against to pull row cell data
 			var rowRegex = /\"[-A-Z a-z 0-9 /&+%.]*\"}|\"([-A-Z a-z 0-9 /&+%.]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g;
 
 			// convert object to string

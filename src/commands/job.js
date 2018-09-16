@@ -19,7 +19,7 @@ exports.run = async (bot, msg, args) => {
 			let jobAutoTypes = ['HP', 'Attack', 'Break Power', 'Magic', 'Crit Chance', 'Speed', 'Defense','Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift', 'Name', 'Range', 'Attack', 'Break Power', 'Crit Chance', 'Added Effects'];
 					
 			var jobQuery = args[0]; 
-
+			// set variables of specific data of a job query
 			let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
 			let jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
 			let jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
@@ -30,13 +30,13 @@ exports.run = async (bot, msg, args) => {
 			let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
 
 			// seperate columns into separate categories
-			var jobShp = [];
-			var jobSatk = [];
-			var jobSbrk = [];
-			var jobSmag = [];
-			var jobScrt = [];
-			var jobSspd = [];
-			var jobSdef = [];
+			var jobShp = [];	// stat hp
+			var jobSatk = [];	// stat atk
+			var jobSbrk = [];	// stat brk
+			var jobSmag = [];	// stat mag
+			var jobScrt = [];	// stat crit
+			var jobSspd = [];	// stat spd
+			var jobSdef = [];	// stat def
 			var jobEE = [];  	// element enhance
 			var jobERES = []; 	//  resist
 			var jobARES = []; 	// ailment resist
@@ -48,7 +48,7 @@ exports.run = async (bot, msg, args) => {
 			var jobOTH = []; 	// other
 			var jobCHG = []; 	// job change shift
 
-			var jobULTname = [];
+			var jobULTname = []; 
 			var jobULTrange = [];
 			var jobULTatk = [];
 			var jobULTbrk = [];
@@ -61,7 +61,7 @@ exports.run = async (bot, msg, args) => {
 			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`;
 			if (jobQuery === "the-azure-witch") jobDesc += ` | ${jobOrbSet3}`;
 
-			// iterates through each row property
+			// iterates through each row property and stores succeeded regex test into its respective array (category)
 			for (var fields in jobDB[jobQuery]) {
 				let fieldValues =  JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, '');
 				// generate datasets
