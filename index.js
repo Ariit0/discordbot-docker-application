@@ -5,16 +5,11 @@ const fs = require('fs');
 
 /**
  * Initialise Bot
- * @type {Discord}
  */
 const bot = new Discord.Client();
 
 /**
  * Reads commands folder and attaches event file to corresponding event
- * @param  {[type]}
- * @param  {[type]}
- * @param  {Function}
- * @return {[type]}
  */
 fs.readdir('./src/commands/', (err, files) => {
 	if(err) console.log(err);
@@ -24,7 +19,7 @@ fs.readdir('./src/commands/', (err, files) => {
 		// file must be a JS file otherwise ignore it
 		if (!file.endsWith(".js")) return;
 
-		let cmd = require(`./src/commands/${file}`)
+		let cmd = require(`./src/commands/${file}`);
 		let cmdName = file.split('.')[0];
 		// Call events with variable number of arguments
 		bot.on(cmdName, (...args) => eventFunction.run(bot, ...args));
@@ -33,9 +28,6 @@ fs.readdir('./src/commands/', (err, files) => {
 
 /**
  * Bot's awake method, used to intialise and establish bot's current settings 
- * @param  {[type]}
- * @param  {[type]}
- * @return {[type]}
  */
 bot.on('ready', async () => {
 	console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
@@ -44,9 +36,6 @@ bot.on('ready', async () => {
 
 /**
  * Bot's event handler for listening for incoming messages
- * @param  {[type]}
- * @param  {[type]}
- * @return {[type]}
  */
 bot.on('message', async (msg) => {
 	// Prevent botception and incorrect prefix
