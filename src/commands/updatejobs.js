@@ -21,7 +21,6 @@ exports.run = async (bot, msg, args) => {
 			 * Method use to pull row data and sanitise for JSON formatting (pretty messy)
 			 */
 			var jobDB = {}; 
-			var jobListDB = {};
 			var headings = [];
 			var data = [];
 			var keys = [];
@@ -37,8 +36,6 @@ exports.run = async (bot, msg, args) => {
 			// grabs row data denoted with the prefix ":\""
 			var rowData = myJSON.match(rowRegex);
 
-
-			//console.log(myJSON);
 			// sanitise data and store in seperate arrays-
 			for (var i = 0; i < rowData.length; i++) {
 				// remove quotations around string
@@ -49,14 +46,13 @@ exports.run = async (bot, msg, args) => {
 				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&+%.:]*/g, '');
 			}
 
-			// parent key 
+			// parent key (the field the user uses to search)
 			let k = 0;
 			for (var i = 0; i < data.length; i+=headings.length ) {
 				keys[k] = data[i];
 				k++;
 			}
 			console.log(colHeading.length);
-			//console.log(data[68]);
 			// seperates child keys and child object pairs into seperate arrays (can be done better....just quick solution)
 			// improve naming of variables...
 			var singleRows = [];
@@ -87,16 +83,13 @@ exports.run = async (bot, msg, args) => {
 					jobData[headerArray[i][j]] = singleRows[i][j];
 				}
 
-				jobDB[keys[i]] = jobData;
-				jobListDB[i] = keys[i];
+				jobDB[keys[i].replace(/[^a-zA-Z-\[\]]-?/g, '')] = jobData;
 			}
 			// convert to string
 			var JSONfile = JSON.stringify(jobDB, null, 4);
-			var JSONfile2 = JSON.stringify(jobListDB, null, 4);
 
 			// save output as json
 			var buffer = new Buffer(JSONfile);
-			var buffer2 = new Buffer(JSONfile2)
 
 			// handles writing to DB.json
 			fs.open('./src/DB.json', 'w', (err, fd) => {
@@ -110,21 +103,6 @@ exports.run = async (bot, msg, args) => {
 					});
 				});
 			});
-
-			// handles writing to jobListDB.json
-			fs.open('./src/jobListDB.json', 'w', (err, fd) => {
-				if (err) throw err;
-
-				fs.write(fd, buffer2, 0, buffer2.length, null, (err) => {
-					if (err) throw err;
-
-					fs.close(fd, () => {
-						console.log('jobListDB Updated');
-					});
-				});
-			});
-
-
 		});
 	});
 				msg.channel.send('DB Updated');

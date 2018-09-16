@@ -1,5 +1,5 @@
 {
-    "1-onion-knight": {
+    "onion-knight": {
         "job-id": "1-onion-knight",
         "job-type": "Warrior",
         "job-name": "Onion Knight",
@@ -69,7 +69,7 @@
         "job-weapon2-def": "-",
         "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/137.jpg"
     },
-    "2-apprentice-mage": {
+    "apprentice-mage": {
         "job-id": "2-apprentice-mage",
         "job-type": "Mage",
         "job-name": "Apprentice Mage",
@@ -139,7 +139,7 @@
         "job-weapon2-def": "-",
         "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/141.jpg"
     },
-    "3-neophyte-ranger": {
+    "neophyte-ranger": {
         "job-id": "3-neophyte-ranger",
         "job-type": "Ranger",
         "job-name": "Neophyte Ranger",
@@ -209,7 +209,7 @@
         "job-weapon2-def": "-",
         "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/145.jpg"
     },
-    "4-trainee-monk": {
+    "trainee-monk": {
         "job-id": "4-trainee-monk",
         "job-type": "Monk",
         "job-name": "Trainee Monk",
@@ -279,7 +279,7 @@
         "job-weapon2-def": "-",
         "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/228.jpg"
     },
-    "5-the-azure-witch": {
+    "the-azure-witch": {
         "job-id": "5-the-azure-witch",
         "job-type": "Meia",
         "job-name": "The Azure Witch",
@@ -349,7 +349,7 @@
         "job-weapon2-def": "-",
         "job-weapon2-icon": "-"
     },
-    "6-battle-princess": {
+    "battle-princess": {
         "job-id": "6-battle-princess",
         "job-type": "Sarah",
         "job-name": "Battle Princess",
