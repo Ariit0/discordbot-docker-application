@@ -21,6 +21,7 @@ exports.run = async (bot, msg, args) => {
 			 * Method use to pull row data and sanitise for JSON formatting (pretty messy)
 			 */
 			var jobDB = {}; 
+			var jobListDB = {};
 			var headings = [];
 			var data = [];
 			var keys = [];
@@ -87,13 +88,17 @@ exports.run = async (bot, msg, args) => {
 				}
 
 				jobDB[keys[i]] = jobData;
+				jobListDB[i] = keys[i];
 			}
 			// convert to string
 			var JSONfile = JSON.stringify(jobDB, null, 4);
+			var JSONfile2 = JSON.stringify(jobListDB, null, 4);
 
 			// save output as json
 			var buffer = new Buffer(JSONfile);
+			var buffer2 = new Buffer(JSONfile2)
 
+			// handles writing to DB.json
 			fs.open('./src/DB.json', 'w', (err, fd) => {
 				if (err) throw err;
 
@@ -105,6 +110,21 @@ exports.run = async (bot, msg, args) => {
 					});
 				});
 			});
+
+			// handles writing to jobListDB.json
+			fs.open('./src/jobListDB.json', 'w', (err, fd) => {
+				if (err) throw err;
+
+				fs.write(fd, buffer2, 0, buffer2.length, null, (err) => {
+					if (err) throw err;
+
+					fs.close(fd, () => {
+						console.log('jobListDB Updated');
+					});
+				});
+			});
+
+
 		});
 	});
 				msg.channel.send('DB Updated');
