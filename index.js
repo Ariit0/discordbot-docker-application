@@ -2,6 +2,23 @@ const Discord = require('discord.js');
 // Enable Environmental Variables for online deployment
 require('dotenv').config({ path : './src/config.env'});
 const fs = require('fs'); 
+const mongoose = require('mongoose');
+
+var mongoDBUrl = process.env.MONGOLAB_URI;
+
+const usr = process.env.MONGOLAB_USER
+const pwd = process.env.MONGOLAB_PASS
+
+/**
+ * Establish mongodb server
+ */
+mongoose.connect(mongoDBUrl, {useNewUrlParser: true, user: usr, pass: pwd}, function (err, db) {
+	if (!err) {
+		console.log('Connected to Database');
+	} else {
+		console.log(err);
+	}
+});
 
 /**
  * Initialise Bot
