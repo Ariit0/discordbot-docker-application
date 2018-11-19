@@ -22,6 +22,7 @@
     "dotenv": "^6.1.0",
     "google-spreadsheet": "^2.0.6",
     "googleapis": "^27.0.0",
+    "mongoose": "^5.3.12",
     "superagent": "^3.8.3"
   }
 }
