@@ -77,3 +77,4 @@ typings/
 ## MY GIT IGNORES
 token.json
 client_secret.json
+config.env

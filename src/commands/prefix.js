@@ -14,7 +14,6 @@ exports.run = async (bot, msg, args) => {
 	if (msg.author.id !== config.ownerID) return;
 
 	let newPrefix = args[0];
-	console.log(args[0]);
 	// prefix cannot be empty or the same
 	if (newPrefix == null) return;
 
