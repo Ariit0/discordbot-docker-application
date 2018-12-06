@@ -27,7 +27,7 @@ exports.run = async (bot, msg, args) => {
 			let jobOrbSet1 = JSON.stringify(jobDB[jobQuery]['job-orb-set-1']).replace(/"/g, '');
 			let jobOrbSet2 =JSON.stringify(jobDB[jobQuery]['job-orb-set-2']).replace(/"/g, '');
 			let jobOrbSet3 =JSON.stringify(jobDB[jobQuery]['job-orb-set-3']).replace(/"/g, '');
-			let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-multiplayer-role']).replace(/"/g, '');
+			let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
 
 			// seperate columns into separate categories
 			var jobShp = [];	// stat hp
@@ -156,6 +156,7 @@ exports.run = async (bot, msg, args) => {
 function JobRegex(fields, arr, val) {
 	// Test whether at least one element passes the test and
 	// if it does push the match to the respective array
+	
 	return [
 		/job-hp/g,
 		/job-atk/g,
