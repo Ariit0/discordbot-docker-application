@@ -80,9 +80,10 @@ exports.run = async (bot, msg, args) => {
 			// TODO: restructure for weapon columns....
 			for (var i = 0; i < numRow; i++) { 
 				// wtb better solution 
+				var jobAutoes = {};
 				var jobData = {}; 
 				var jobStats = {};
-				var jobOrbs = {};
+				var jobOrbs = [];
 				var jobEleBoost = {};
 				var jobEleResist = {};
 				var jobAverts = {};
@@ -99,7 +100,7 @@ exports.run = async (bot, msg, args) => {
 					if (j >= 3 && j <= 9) { // job stats
 						jobStats[headerArray[i][j]] = singleRows[i][j];
 					} else if (j >= 10 && j <= 12) { // job orbs
-						jobOrbs[headerArray[i][j]] = singleRows[i][j];
+						jobOrbs.push(singleRows[i][j]);
 					} else if (j >= 14 && j <= 19) { // job element boost
 						jobEleBoost[headerArray[i][j]] = singleRows[i][j];
 					} else if (j >= 20 && j <= 25) { // job element resist
@@ -112,11 +113,11 @@ exports.run = async (bot, msg, args) => {
 						jobUltimate[headerArray[i][j]] = singleRows[i][j];
 					} else if (j >= 49 && j <= 57) { // job auto damage
 						jobAutoDmg[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 58 && j <= 60) { // job auto break
+					} else if (j >= 58 && j <= 61) { // job auto break
 						jobAutoBrk[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 61 && j <= 63) { // job auto defense
+					} else if (j >= 62 && j <= 64) { // job auto defense
 						jobAutoDef[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 64 && j <= 74) { // job auto other
+					} else if (j >= 65 && j <= 75) { // job auto other
 						jobAutoOther[headerArray[i][j]] = singleRows[i][j];
 					} else {
 						nest = false;
@@ -127,27 +128,32 @@ exports.run = async (bot, msg, args) => {
 					} else if (j == 12) {
 						jobData['job-orbs'] = jobOrbs;
 					} else if (j == 19) {
-						jobData['job-element-boost'] = jobEleBoost;
+						jobAutoes['job-element-enhance'] = jobEleBoost;
 					} else if (j == 25) { 
-						jobData['job-element-resist'] = jobEleResist;
+						jobAutoes['job-element-resist'] = jobEleResist;
 					} else if (j == 34) {
-						jobData['job-ailment-avert'] = jobAverts;
+						jobAutoes['job-ailment-resist'] = jobAverts;
 					} else if (j == 42) {
-						jobData['job-heal-drive'] = jobHealDrive;
+						jobAutoes['job-drive-heal'] = jobHealDrive;
 					} else if (j == 48) {
-						jobData['job-ultimate'] = jobUltimate;
+						jobAutoes['job-ultimate'] = jobUltimate;
 					} else if (j == 57) {
-						jobData['job-auto-damage'] = jobAutoDmg;
+						jobAutoes['job-auto-damage'] = jobAutoDmg;
 					} else if (j == 60) {
-						jobData['job-auto-break'] = jobAutoBrk;
+						jobAutoes['job-auto-break'] = jobAutoBrk;
 					} else if (j == 63) {
-						jobData['job-auto-defense'] = jobAutoDef;
+						jobAutoes['job-auto-defense'] = jobAutoDef;
 					} else if (j == 74) {
-						jobData['job-auto-other'] = jobAutoOther;
+						jobAutoes['job-auto-other'] = jobAutoOther;
+						jobData['job-autoes'] = jobAutoes;
 					}
 					
 					if (nest == false) {
-						jobData[headerArray[i][j]] = singleRows[i][j];
+						if (j == 35) { // clutch boons
+							jobAutoes[headerArray[i][j]] = singleRows[i][j];
+						} else {
+							jobData[headerArray[i][j]] = singleRows[i][j];
+						}
 					}	
 				}
 	

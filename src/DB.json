@@ -5,97 +5,100 @@
         "job-name": "Onion Knight",
         "job-stats": {
             "job-hp": "6850",
-            "job-atk": "512",
-            "job-brk": "293",
-            "job-mag": "510",
-            "job-crit": "-",
-            "job-spd": "4",
-            "job-dfs": "1"
+            "job-attack": "512",
+            "job-break-power": "293",
+            "job-magic": "510",
+            "job-crit-chance": "-",
+            "job-speed": "4",
+            "job-defense": "1"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Fire-Water-Earth",
-            "job-orb-set-2": "Fire-Water-Light",
-            "job-orb-set-3": "-"
-        },
+        "job-orbs": [
+            "Fire-Water-Earth",
+            "Fire-Water-Light",
+            "-"
+        ],
         "job-mp-role": "ATK",
-        "job-element-boost": {
-            "job-fire-boost": "75",
-            "job-water-boost": "-",
-            "job-wind-boost": "-",
-            "job-earth-boost": "-",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "21",
-            "job-water-resist": "-",
-            "job-wind-resist": "-",
-            "job-earth-resist": "-",
-            "job-light-resist": "-",
-            "job-dark-resist": "-"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "50",
-            "job-avert-brk": "-",
-            "job-avert-mag": "-",
-            "job-avert-crit": "-",
-            "job-avert-slow": "-",
-            "job-avert-stun": "-",
-            "job-avert-def": "20",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "-"
-        },
-        "job-clutch-boons": "Brave/Boost/Barrier/Wall",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "-",
-            "job-heal-dark": "-",
-            "job-heal-life": "-"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Onion Dicer",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "900",
-            "job-ultimate-brk": "300",
-            "job-ultimate-crit": "1",
-            "job-ultimate-effects": "Brave"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "-",
-            "job-damage-crit": "-",
-            "job-damage-exploit": "-",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "-",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "-",
-            "job-break-quick": "-",
-            "job-break-flash": "-"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "",
-            "job-auto-ult": "",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "",
-            "job-ele-third": "",
-            "job-prism-start": "",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "75",
+                "job-water-boost": "-",
+                "job-wind-boost": "-",
+                "job-earth-boost": "-",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "21",
+                "job-water-resist": "-",
+                "job-wind-resist": "-",
+                "job-earth-resist": "-",
+                "job-light-resist": "-",
+                "job-dark-resist": "-"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "50",
+                "job-avert-brk": "-",
+                "job-avert-mag": "-",
+                "job-avert-crit": "-",
+                "job-avert-slow": "-",
+                "job-avert-stun": "-",
+                "job-avert-def": "20",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "-"
+            },
+            "job-clutch-boons": "Brave/Boost/Barrier/Wall",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "-",
+                "job-heal-dark": "-",
+                "job-heal-life": "-"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Onion Dicer",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "900",
+                "job-ultimate-brk": "300",
+                "job-ultimate-crit": "1",
+                "job-ultimate-effects": "Brave"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "-",
+                "job-dmg-improved-criticals": "-",
+                "job-dmg-exploit-weakness": "-",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "-",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "-",
+                "job-brk-quick-break": "-",
+                "job-brk-flash-break": "-",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "-",
+                "job-auto-ult": "-",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "-",
+                "job-ele-third": "-",
+                "job-prism-start": "-",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Fire",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/1.jpg",
@@ -133,97 +136,100 @@
         "job-name": "Apprentice Mage",
         "job-stats": {
             "job-hp": "6850",
-            "job-atk": "426",
-            "job-brk": "270",
-            "job-mag": "675",
-            "job-crit": "1",
-            "job-spd": "4",
-            "job-dfs": "-"
+            "job-attack": "426",
+            "job-break-power": "270",
+            "job-magic": "675",
+            "job-crit-chance": "1",
+            "job-speed": "4",
+            "job-defense": "-"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Fire-Water-Wind",
-            "job-orb-set-2": "Fire-Water-Light",
-            "job-orb-set-3": "-"
-        },
+        "job-orbs": [
+            "Fire-Water-Wind",
+            "Fire-Water-Light",
+            "-"
+        ],
         "job-mp-role": "ATK",
-        "job-element-boost": {
-            "job-fire-boost": "-",
-            "job-water-boost": "75",
-            "job-wind-boost": "-",
-            "job-earth-boost": "-",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "-",
-            "job-water-resist": "21",
-            "job-wind-resist": "-",
-            "job-earth-resist": "-",
-            "job-light-resist": "-",
-            "job-dark-resist": "-"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "-",
-            "job-avert-brk": "-",
-            "job-avert-mag": "20",
-            "job-avert-crit": "-",
-            "job-avert-slow": "-",
-            "job-avert-stun": "-",
-            "job-avert-def": "-",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "50"
-        },
-        "job-clutch-boons": "Faith/Boost/Veil/Regen",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "-",
-            "job-heal-dark": "-",
-            "job-heal-life": "-"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Rain of Ruin",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1000",
-            "job-ultimate-brk": "250",
-            "job-ultimate-crit": "1",
-            "job-ultimate-effects": "Faith"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "-",
-            "job-damage-crit": "-",
-            "job-damage-exploit": "-",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "-",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "-",
-            "job-break-quick": "-",
-            "job-break-flash": "-"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "",
-            "job-auto-ult": "",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "",
-            "job-ele-third": "",
-            "job-prism-start": "",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "-",
+                "job-water-boost": "75",
+                "job-wind-boost": "-",
+                "job-earth-boost": "-",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "-",
+                "job-water-resist": "21",
+                "job-wind-resist": "-",
+                "job-earth-resist": "-",
+                "job-light-resist": "-",
+                "job-dark-resist": "-"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "-",
+                "job-avert-brk": "-",
+                "job-avert-mag": "20",
+                "job-avert-crit": "-",
+                "job-avert-slow": "-",
+                "job-avert-stun": "-",
+                "job-avert-def": "-",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "50"
+            },
+            "job-clutch-boons": "Faith/Boost/Veil/Regen",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "-",
+                "job-heal-dark": "-",
+                "job-heal-life": "-"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Rain of Ruin",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "1000",
+                "job-ultimate-brk": "250",
+                "job-ultimate-crit": "1",
+                "job-ultimate-effects": "Faith"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "-",
+                "job-dmg-improved-criticals": "-",
+                "job-dmg-exploit-weakness": "-",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "-",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "-",
+                "job-brk-quick-break": "-",
+                "job-brk-flash-break": "-",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "-",
+                "job-auto-ult": "-",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "-",
+                "job-ele-third": "-",
+                "job-prism-start": "-",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Wind",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/8.jpg",
@@ -261,97 +267,100 @@
         "job-name": "Neophyte Ranger",
         "job-stats": {
             "job-hp": "6850",
-            "job-atk": "442",
-            "job-brk": "322",
-            "job-mag": "545",
-            "job-crit": "2",
-            "job-spd": "4",
-            "job-dfs": "-"
+            "job-attack": "442",
+            "job-break-power": "322",
+            "job-magic": "545",
+            "job-crit-chance": "2",
+            "job-speed": "4",
+            "job-defense": "-"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Water-Wind-Earth",
-            "job-orb-set-2": "Water-Wind-Dark",
-            "job-orb-set-3": "-"
-        },
+        "job-orbs": [
+            "Water-Wind-Earth",
+            "Water-Wind-Dark",
+            "-"
+        ],
         "job-mp-role": "BRK",
-        "job-element-boost": {
-            "job-fire-boost": "-",
-            "job-water-boost": "-",
-            "job-wind-boost": "50",
-            "job-earth-boost": "-",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "-",
-            "job-water-resist": "-",
-            "job-wind-resist": "46",
-            "job-earth-resist": "-",
-            "job-light-resist": "-",
-            "job-dark-resist": "-"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "-",
-            "job-avert-brk": "-",
-            "job-avert-mag": "-",
-            "job-avert-crit": "-",
-            "job-avert-slow": "50",
-            "job-avert-stun": "20",
-            "job-avert-def": "-",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "-"
-        },
-        "job-clutch-boons": "Boost/Drain/Regen",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "-",
-            "job-heal-dark": "-",
-            "job-heal-life": "-"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Axle Cutter",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "800",
-            "job-ultimate-brk": "360",
-            "job-ultimate-crit": "2",
-            "job-ultimate-effects": "Boost"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "-",
-            "job-damage-crit": "-",
-            "job-damage-exploit": "-",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "-",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "-",
-            "job-break-quick": "-",
-            "job-break-flash": "-"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "",
-            "job-auto-ult": "",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "",
-            "job-ele-third": "",
-            "job-prism-start": "",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "-",
+                "job-water-boost": "-",
+                "job-wind-boost": "50",
+                "job-earth-boost": "-",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "-",
+                "job-water-resist": "-",
+                "job-wind-resist": "46",
+                "job-earth-resist": "-",
+                "job-light-resist": "-",
+                "job-dark-resist": "-"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "-",
+                "job-avert-brk": "-",
+                "job-avert-mag": "-",
+                "job-avert-crit": "-",
+                "job-avert-slow": "50",
+                "job-avert-stun": "20",
+                "job-avert-def": "-",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "-"
+            },
+            "job-clutch-boons": "Boost/Drain/Regen",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "-",
+                "job-heal-dark": "-",
+                "job-heal-life": "-"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Axle Cutter",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "800",
+                "job-ultimate-brk": "360",
+                "job-ultimate-crit": "2",
+                "job-ultimate-effects": "Boost"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "-",
+                "job-dmg-improved-criticals": "-",
+                "job-dmg-exploit-weakness": "-",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "-",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "-",
+                "job-brk-quick-break": "-",
+                "job-brk-flash-break": "-",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "-",
+                "job-auto-ult": "-",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "-",
+                "job-ele-third": "-",
+                "job-prism-start": "-",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Water",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/15.jpg",
@@ -389,97 +398,100 @@
         "job-name": "Trainee Monk",
         "job-stats": {
             "job-hp": "8650",
-            "job-atk": "906",
-            "job-brk": "511",
-            "job-mag": "173",
-            "job-crit": "1",
-            "job-spd": "4",
-            "job-dfs": "-"
+            "job-attack": "906",
+            "job-break-power": "511",
+            "job-magic": "173",
+            "job-crit-chance": "1",
+            "job-speed": "4",
+            "job-defense": "-"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Fire-Water-Earth",
-            "job-orb-set-2": "-",
-            "job-orb-set-3": "-"
-        },
+        "job-orbs": [
+            "Fire-Water-Earth",
+            "-",
+            "-"
+        ],
         "job-mp-role": "DEF",
-        "job-element-boost": {
-            "job-fire-boost": "-",
-            "job-water-boost": "-",
-            "job-wind-boost": "-",
-            "job-earth-boost": "75",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "-",
-            "job-water-resist": "-",
-            "job-wind-resist": "-",
-            "job-earth-resist": "21",
-            "job-light-resist": "-",
-            "job-dark-resist": "-"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "-",
-            "job-avert-brk": "-",
-            "job-avert-mag": "-",
-            "job-avert-crit": "-",
-            "job-avert-slow": "-",
-            "job-avert-stun": "-",
-            "job-avert-def": "-",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "-"
-        },
-        "job-clutch-boons": "Brave/Boost/Wall/Haste",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "-",
-            "job-heal-dark": "-",
-            "job-heal-life": "-"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Fists of Fury",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "300",
-            "job-ultimate-crit": "2",
-            "job-ultimate-effects": "Regen"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "-",
-            "job-damage-crit": "-",
-            "job-damage-exploit": "-",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "-",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "-",
-            "job-break-quick": "-",
-            "job-break-flash": "-"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "",
-            "job-auto-ult": "",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "",
-            "job-ele-third": "",
-            "job-prism-start": "",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "-",
+                "job-water-boost": "-",
+                "job-wind-boost": "-",
+                "job-earth-boost": "75",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "-",
+                "job-water-resist": "-",
+                "job-wind-resist": "-",
+                "job-earth-resist": "21",
+                "job-light-resist": "-",
+                "job-dark-resist": "-"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "-",
+                "job-avert-brk": "-",
+                "job-avert-mag": "-",
+                "job-avert-crit": "-",
+                "job-avert-slow": "-",
+                "job-avert-stun": "-",
+                "job-avert-def": "-",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "-"
+            },
+            "job-clutch-boons": "Brave/Boost/Wall/Haste",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "-",
+                "job-heal-dark": "-",
+                "job-heal-life": "-"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Fists of Fury",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "1500",
+                "job-ultimate-brk": "300",
+                "job-ultimate-crit": "2",
+                "job-ultimate-effects": "Regen"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "-",
+                "job-dmg-improved-criticals": "-",
+                "job-dmg-exploit-weakness": "-",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "-",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "-",
+                "job-brk-quick-break": "-",
+                "job-brk-flash-break": "-",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "-",
+                "job-auto-ult": "-",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "-",
+                "job-ele-third": "-",
+                "job-prism-start": "-",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Earth",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/73.jpg",
@@ -517,97 +529,100 @@
         "job-name": "The Azure Witch",
         "job-stats": {
             "job-hp": "6455",
-            "job-atk": "430",
-            "job-brk": "544",
-            "job-mag": "585",
-            "job-crit": "3",
-            "job-spd": "5",
-            "job-dfs": "-"
+            "job-attack": "430",
+            "job-break-power": "544",
+            "job-magic": "585",
+            "job-crit-chance": "3",
+            "job-speed": "5",
+            "job-defense": "-"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Fire-Water-Dark",
-            "job-orb-set-2": "Fire-Water-Earth",
-            "job-orb-set-3": "Water-Light-Dark"
-        },
+        "job-orbs": [
+            "Fire-Water-Dark",
+            "Fire-Water-Earth",
+            "Water-Light-Dark"
+        ],
         "job-mp-role": "ATK",
-        "job-element-boost": {
-            "job-fire-boost": "-",
-            "job-water-boost": "-",
-            "job-wind-boost": "-",
-            "job-earth-boost": "-",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "15",
-            "job-water-resist": "15",
-            "job-wind-resist": "15",
-            "job-earth-resist": "12",
-            "job-light-resist": "15",
-            "job-dark-resist": "15"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "-",
-            "job-avert-brk": "-",
-            "job-avert-mag": "-",
-            "job-avert-crit": "-",
-            "job-avert-slow": "-",
-            "job-avert-stun": "-",
-            "job-avert-def": "-",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "-"
-        },
-        "job-clutch-boons": "Faith/Barrier/Wall/Snipe/Regen",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "-",
-            "job-heal-dark": "-",
-            "job-heal-life": "5"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Pallida Mors",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "1500",
-            "job-ultimate-crit": "3",
-            "job-ultimate-effects": "Debarrier/Unguard/Weaken/Crit Resist Down"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "20",
-            "job-damage-crit": "20",
-            "job-damage-exploit": "20",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "20",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "-",
-            "job-break-quick": "-",
-            "job-break-flash": "-"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "1",
-            "job-auto-ult": "3",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "1",
-            "job-ele-third": "",
-            "job-prism-start": "1",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "-",
+                "job-water-boost": "-",
+                "job-wind-boost": "-",
+                "job-earth-boost": "-",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "15",
+                "job-water-resist": "15",
+                "job-wind-resist": "15",
+                "job-earth-resist": "12",
+                "job-light-resist": "15",
+                "job-dark-resist": "15"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "-",
+                "job-avert-brk": "-",
+                "job-avert-mag": "-",
+                "job-avert-crit": "-",
+                "job-avert-slow": "-",
+                "job-avert-stun": "-",
+                "job-avert-def": "-",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "-"
+            },
+            "job-clutch-boons": "Faith/Barrier/Wall/Snipe/Regen",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "-",
+                "job-heal-dark": "-",
+                "job-heal-life": "5"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Pallida Mors",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "1500",
+                "job-ultimate-brk": "1500",
+                "job-ultimate-crit": "3",
+                "job-ultimate-effects": "Debarrier/Unguard/Weaken/Crit Resist Down"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "20",
+                "job-dmg-improved-criticals": "20",
+                "job-dmg-exploit-weakness": "20",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "20",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "-",
+                "job-brk-quick-break": "-",
+                "job-brk-flash-break": "-",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "1",
+                "job-auto-ult": "3",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "1",
+                "job-ele-third": "-",
+                "job-prism-start": "1",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Water",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/109.jpg",
@@ -645,97 +660,100 @@
         "job-name": "Battle Princess",
         "job-stats": {
             "job-hp": "9104",
-            "job-atk": "661",
-            "job-brk": "730",
-            "job-mag": "648",
-            "job-crit": "3",
-            "job-spd": "6",
-            "job-dfs": "-"
+            "job-attack": "661",
+            "job-break-power": "730",
+            "job-magic": "648",
+            "job-crit-chance": "3",
+            "job-speed": "6",
+            "job-defense": "-"
         },
-        "job-orbs": {
-            "job-orb-set-1": "Wind-Earth-Light",
-            "job-orb-set-2": "Fire-Water-Light",
-            "job-orb-set-3": "-"
-        },
+        "job-orbs": [
+            "Wind-Earth-Light",
+            "Fire-Water-Light",
+            "-"
+        ],
         "job-mp-role": "BRK",
-        "job-element-boost": {
-            "job-fire-boost": "-",
-            "job-water-boost": "-",
-            "job-wind-boost": "-",
-            "job-earth-boost": "-",
-            "job-light-boost": "-",
-            "job-dark-boost": "-"
-        },
-        "job-element-resist": {
-            "job-fire-resist": "15",
-            "job-water-resist": "15",
-            "job-wind-resist": "15",
-            "job-earth-resist": "15",
-            "job-light-resist": "15",
-            "job-dark-resist": "15"
-        },
-        "job-ailment-avert": {
-            "job-avert-atk": "-",
-            "job-avert-brk": "-",
-            "job-avert-mag": "-",
-            "job-avert-crit": "-",
-            "job-avert-slow": "50",
-            "job-avert-stun": "-",
-            "job-avert-def": "-",
-            "job-avert-unguard": "-",
-            "job-avert-bio": "-"
-        },
-        "job-clutch-boons": "Barrier/Boost/Haste/Snipe",
-        "job-heal-drive": {
-            "job-heal-fire": "-",
-            "job-heal-water": "-",
-            "job-heal-wind": "-",
-            "job-heal-earth": "-",
-            "job-heal-light": "1",
-            "job-heal-dark": "-",
-            "job-heal-life": "5"
-        },
-        "job-ultimate": {
-            "job-ultimate-name": "Agana Belea",
-            "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "1700",
-            "job-ultimate-crit": "1",
-            "job-ultimate-effects": "Faith/Boost/Snipe/Barrier/Wall/Veil"
-        },
-        "job-auto-damage": {
-            "job-damage-painful": "80",
-            "job-damage-crit": "-",
-            "job-damage-exploit": "-",
-            "job-damage-scourge": "-",
-            "job-damage-ravage": "-",
-            "job-damage-attuned": "-",
-            "job-damage-ability": "-",
-            "job-damage-salvo": "-",
-            "job-damage-duelist": "-"
-        },
-        "job-auto-break": {
-            "job-break-piercing": "70",
-            "job-break-quick": "10",
-            "job-break-flash": "50"
-        },
-        "job-auto-defense": {
-            "job-defense-steelguard": "-",
-            "job-defense-healvic": "-",
-            "job-defense-regenact": "-"
-        },
-        "job-auto-other": {
-            "job-ult-charger": "1",
-            "job-auto-ult": "3",
-            "job-ext-brk": "",
-            "job-prism-return": "",
-            "job-kill-draw": "1",
-            "job-ele-third": "",
-            "job-prism-start": "",
-            "job-life-start": "",
-            "job-armour-break": "",
-            "job-risk-taker": "",
-            "job-high-roller": ""
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "-",
+                "job-water-boost": "-",
+                "job-wind-boost": "-",
+                "job-earth-boost": "-",
+                "job-light-boost": "-",
+                "job-dark-boost": "-"
+            },
+            "job-element-resist": {
+                "job-fire-resist": "15",
+                "job-water-resist": "15",
+                "job-wind-resist": "15",
+                "job-earth-resist": "15",
+                "job-light-resist": "15",
+                "job-dark-resist": "15"
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "-",
+                "job-avert-brk": "-",
+                "job-avert-mag": "-",
+                "job-avert-crit": "-",
+                "job-avert-slow": "50",
+                "job-avert-stun": "-",
+                "job-avert-def": "-",
+                "job-avert-unguard": "-",
+                "job-avert-bio": "-"
+            },
+            "job-clutch-boons": "Barrier/Boost/Haste/Snipe",
+            "job-drive-heal": {
+                "job-heal-fire": "-",
+                "job-heal-water": "-",
+                "job-heal-wind": "-",
+                "job-heal-earth": "-",
+                "job-heal-light": "1",
+                "job-heal-dark": "-",
+                "job-heal-life": "5"
+            },
+            "job-ultimate": {
+                "job-ultimate-name": "Agana Belea",
+                "job-ultimate-range": "Single",
+                "job-ultimate-atk": "1500",
+                "job-ultimate-brk": "1700",
+                "job-ultimate-crit": "1",
+                "job-ultimate-effects": "Faith/Boost/Snipe/Barrier/Wall/Veil"
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "80",
+                "job-dmg-improved-criticals": "-",
+                "job-dmg-exploit-weakness": "-",
+                "job-dmg-scourge": "-",
+                "job-dmg-ravage": "-",
+                "job-dmg-attuned-chain": "-",
+                "job-dmg-ability-chain": "-",
+                "job-dmg-furious-salvo": "-",
+                "job-dmg-duelist": "-"
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "70",
+                "job-brk-quick-break": "10",
+                "job-brk-flash-break": "50",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "-",
+                "job-def-healing-victory": "-",
+                "job-def-regen-act": "-"
+            },
+            "job-auto-other": {
+                "job-ult-charger": "1",
+                "job-auto-ult": "3",
+                "job-ext-brk": "-",
+                "job-prism-return": "-",
+                "job-kill-draw": "1",
+                "job-ele-third": "-",
+                "job-prism-start": "-",
+                "job-life-start": "-",
+                "job-armour-break": "-",
+                "job-risk-taker": "-",
+                "job-high-roller": "-"
+            }
         },
         "job-change-shift": "Light",
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/141.jpg",
