@@ -7,7 +7,7 @@ exports.run = async (bot, msg, args) => {
 	// Should be fine for now.
 
 	var message = "To run a command, use \`./<command>\`\n\n**Command List:**\n";
-	var desc = ["Gacha (lootbox) simulator pulled from imgur album", "Displays list of available commands", "Query job database - \`./job\` for more information", "Check bot's ping to the Discord Server","Sets the command prefix", "Updates the cached database"];
+	var desc = ["Displays list of available commands", "Query job database - \`./job\` for more information", "Check bot's ping to the Discord Server","Sets the command prefix", "Updates the cached database"];
 
 
 	fs.readdir('./src/commands/', (err, files) => {
