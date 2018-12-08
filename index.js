@@ -68,7 +68,6 @@ bot.on('message', async (msg) => {
 		let cmdFile = require(`./src/commands/${cmd}.js`);
 		currUserTime[msg.author.id] = now;
 		if (prevUserTime[msg.author.id] == null) prevUserTime[msg.author.id] = 0;
-		console.log(prevUserTime[msg.author.id]);
 
 		if (currUserTime[msg.author.id] - prevUserTime[msg.author.id] > Math.round(0.165 * 60 * 1000)) { // if its been more than 10 seconds
 			cmdFile.run(bot, msg, args);

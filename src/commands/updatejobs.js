@@ -88,11 +88,11 @@ exports.run = async (bot, msg, args) => {
 				var jobEleResist = {};
 				var jobAverts = {};
 				var jobHealDrive = {};
-				var jobUltimate = {};
 				var jobAutoDmg = {};
 				var jobAutoBrk = {};
 				var jobAutoDef = {};
 				var jobAutoOther = {};
+				var jobUltimate = {};
 				for (var j = 0; j < numCols; j++) { 
 					var nest = true;
 
@@ -109,16 +109,16 @@ exports.run = async (bot, msg, args) => {
 						jobAverts[headerArray[i][j]] = singleRows[i][j];
 					} else if (j >= 36 && j <= 42) { // job heal drive
 						jobHealDrive[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 43 && j <= 48) { // job ultimate
-						jobUltimate[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 49 && j <= 57) { // job auto damage
+					} else if (j >= 43 && j <= 51) { // job auto damage
 						jobAutoDmg[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 58 && j <= 61) { // job auto break
+					} else if (j >= 52 && j <= 55) { // job auto break
 						jobAutoBrk[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 62 && j <= 64) { // job auto defense
+					} else if (j >= 56 && j <= 58) { // job auto defense
 						jobAutoDef[headerArray[i][j]] = singleRows[i][j];
-					} else if (j >= 65 && j <= 75) { // job auto other
+					} else if (j >= 59 && j <= 69) { // job auto other
 						jobAutoOther[headerArray[i][j]] = singleRows[i][j];
+					} else if (j >= 71 && j <= 76) { // job ultimate
+						jobUltimate[headerArray[i][j]] = singleRows[i][j];
 					} else {
 						nest = false;
 					}
@@ -135,21 +135,21 @@ exports.run = async (bot, msg, args) => {
 						jobAutoes['job-ailment-resist'] = jobAverts;
 					} else if (j == 42) {
 						jobAutoes['job-drive-heal'] = jobHealDrive;
-					} else if (j == 48) {
-						jobAutoes['job-ultimate'] = jobUltimate;
-					} else if (j == 57) {
+					} else if (j == 51) {
 						jobAutoes['job-auto-damage'] = jobAutoDmg;
-					} else if (j == 60) {
+					} else if (j == 55) {
 						jobAutoes['job-auto-break'] = jobAutoBrk;
-					} else if (j == 63) {
+					} else if (j == 58) {
 						jobAutoes['job-auto-defense'] = jobAutoDef;
-					} else if (j == 74) {
+					} else if (j == 69) {
 						jobAutoes['job-auto-other'] = jobAutoOther;
 						jobData['job-autoes'] = jobAutoes;
+					} else if (j == 76) {
+						jobData['job-ultimate'] = jobUltimate;
 					}
 					
 					if (nest == false) {
-						if (j == 35) { // clutch boons
+						if (j == 35 || j == 70) { // clutch boons
 							jobAutoes[headerArray[i][j]] = singleRows[i][j];
 						} else {
 							jobData[headerArray[i][j]] = singleRows[i][j];

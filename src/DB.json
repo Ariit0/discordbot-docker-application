@@ -56,14 +56,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "-"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Onion Dicer",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "900",
-                "job-ultimate-brk": "300",
-                "job-ultimate-crit": "1",
-                "job-ultimate-effects": "Brave"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
                 "job-dmg-improved-criticals": "-",
@@ -98,37 +90,19 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Fire"
         },
-        "job-change-shift": "Fire",
+        "job-ultimate": {
+            "job-ultimate-name": "Onion Dicer",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "900",
+            "job-ultimate-brk": "300",
+            "job-ultimate-crit": "1",
+            "job-ultimate-effects": "Brave"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/1.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png",
-        "job-weapon1-id": "1-blank-blade",
-        "job-weapon1-name": "Blank Blade",
-        "job-weapon1-auto1": "Ultimate-Charger-1",
-        "job-weapon1-auto2": "Healing-Victory-20",
-        "job-weapon1-auto3": "Life-Draw-20",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "50",
-        "job-weapon1-brk": "35",
-        "job-weapon1-mag": "15",
-        "job-weapon1-crit": "-",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/4.jpg",
-        "job-weapon2-id": "2-Fatal-Masher",
-        "job-weapon2-name": "Fatal Masher",
-        "job-weapon2-auto1": "Life-Draw-20",
-        "job-weapon2-auto2": "Healing-Victory-10",
-        "job-weapon2-auto3": "Drive-Heal-4",
-        "job-weapon2-auto4": "Ultimate-1",
-        "job-weapon2-hp": "75",
-        "job-weapon2-brk": "55",
-        "job-weapon2-mag": "30",
-        "job-weapon2-crit": "-",
-        "job-weapon2-spd": "1",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/137.jpg"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "apprentice-mage": {
         "job-id": "2-apprentice-mage",
@@ -187,14 +161,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "-"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Rain of Ruin",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "1000",
-                "job-ultimate-brk": "250",
-                "job-ultimate-crit": "1",
-                "job-ultimate-effects": "Faith"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
                 "job-dmg-improved-criticals": "-",
@@ -229,37 +195,19 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Wind"
         },
-        "job-change-shift": "Wind",
+        "job-ultimate": {
+            "job-ultimate-name": "Rain of Ruin",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "1000",
+            "job-ultimate-brk": "250",
+            "job-ultimate-crit": "1",
+            "job-ultimate-effects": "Faith"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/8.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png",
-        "job-weapon1-id": "2-sappling-saff",
-        "job-weapon1-name": "Sappling Staff",
-        "job-weapon1-auto1": "Ultimate-Charger-1",
-        "job-weapon1-auto2": "Healing-Victory-20",
-        "job-weapon1-auto3": "Life-Draw-20",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "42",
-        "job-weapon1-brk": "30",
-        "job-weapon1-mag": "25",
-        "job-weapon1-crit": "-",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/21.jpg",
-        "job-weapon2-id": "4-Seraphic-Rod",
-        "job-weapon2-name": "Seraphic Rod",
-        "job-weapon2-auto1": "Life-Draw-20",
-        "job-weapon2-auto2": "Healing-Victory-10",
-        "job-weapon2-auto3": "Drive-Heal-4",
-        "job-weapon2-auto4": "Ultimate-1",
-        "job-weapon2-hp": "65",
-        "job-weapon2-brk": "45",
-        "job-weapon2-mag": "50",
-        "job-weapon2-crit": "-",
-        "job-weapon2-spd": "1",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/141.jpg"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "neophyte-ranger": {
         "job-id": "3-neophyte-ranger",
@@ -318,14 +266,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "-"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Axle Cutter",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "800",
-                "job-ultimate-brk": "360",
-                "job-ultimate-crit": "2",
-                "job-ultimate-effects": "Boost"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
                 "job-dmg-improved-criticals": "-",
@@ -360,37 +300,19 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Water"
         },
-        "job-change-shift": "Water",
+        "job-ultimate": {
+            "job-ultimate-name": "Axle Cutter",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "800",
+            "job-ultimate-brk": "360",
+            "job-ultimate-crit": "2",
+            "job-ultimate-effects": "Boost"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/15.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png",
-        "job-weapon1-id": "3-survival-knife",
-        "job-weapon1-name": "Surivial Knife",
-        "job-weapon1-auto1": "Ultimate-Charger-1",
-        "job-weapon1-auto2": "Healing-Victory-20",
-        "job-weapon1-auto3": "Life-Draw-20",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "35",
-        "job-weapon1-brk": "50",
-        "job-weapon1-mag": "30",
-        "job-weapon1-crit": "1",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/37.jpg",
-        "job-weapon2-id": "6-Khanjar",
-        "job-weapon2-name": "Khanjar",
-        "job-weapon2-auto1": "Life-Draw-20",
-        "job-weapon2-auto2": "Healing-Victory-10",
-        "job-weapon2-auto3": "Drive-Heal-4",
-        "job-weapon2-auto4": "Ultimate-1",
-        "job-weapon2-hp": "55",
-        "job-weapon2-brk": "75",
-        "job-weapon2-mag": "45",
-        "job-weapon2-crit": "1",
-        "job-weapon2-spd": "1",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/145.jpg"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "trainee-monk": {
         "job-id": "4-trainee-monk",
@@ -449,14 +371,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "-"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Fists of Fury",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "1500",
-                "job-ultimate-brk": "300",
-                "job-ultimate-crit": "2",
-                "job-ultimate-effects": "Regen"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
                 "job-dmg-improved-criticals": "-",
@@ -491,37 +405,19 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Earth"
         },
-        "job-change-shift": "Earth",
+        "job-ultimate": {
+            "job-ultimate-name": "Fists of Fury",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "1500",
+            "job-ultimate-brk": "300",
+            "job-ultimate-crit": "2",
+            "job-ultimate-effects": "Regen"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/73.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png",
-        "job-weapon1-id": "4-barbed-knuckles",
-        "job-weapon1-name": "Barbed Knuckles",
-        "job-weapon1-auto1": "Ultimate-Charger-1",
-        "job-weapon1-auto2": "Healing-Victory-20",
-        "job-weapon1-auto3": "Life-Draw-20",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "50",
-        "job-weapon1-brk": "35",
-        "job-weapon1-mag": "15",
-        "job-weapon1-crit": "-",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/224.jpg",
-        "job-weapon2-id": "8-Premium-Heart",
-        "job-weapon2-name": "Premium Heart",
-        "job-weapon2-auto1": "Life-Draw-20",
-        "job-weapon2-auto2": "Healing-Victory-10",
-        "job-weapon2-auto3": "Drive-Heal-4",
-        "job-weapon2-auto4": "Ultimate-1",
-        "job-weapon2-hp": "75",
-        "job-weapon2-brk": "55",
-        "job-weapon2-mag": "30",
-        "job-weapon2-crit": "-",
-        "job-weapon2-spd": "1",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "https://img.altema.jp/ffmobius/buki/228.jpg"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "the-azure-witch": {
         "job-id": "5-the-azure-witch",
@@ -580,14 +476,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "5"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Pallida Mors",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "1500",
-                "job-ultimate-brk": "1500",
-                "job-ultimate-crit": "3",
-                "job-ultimate-effects": "Debarrier/Unguard/Weaken/Crit Resist Down"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "20",
                 "job-dmg-improved-criticals": "20",
@@ -622,37 +510,19 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Water"
         },
-        "job-change-shift": "Water",
+        "job-ultimate": {
+            "job-ultimate-name": "Pallida Mors",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "1500",
+            "job-ultimate-brk": "1500",
+            "job-ultimate-crit": "3",
+            "job-ultimate-effects": "Debarrier/Unguard/Weaken/Crit Resist Down"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/109.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png",
-        "job-weapon1-id": "5-arc-mirage",
-        "job-weapon1-name": "Arc Mirage",
-        "job-weapon1-auto1": "Kill-&-Draw-2",
-        "job-weapon1-auto2": "Element-Third-Strike-2",
-        "job-weapon1-auto3": "Prism-Return-25",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "55",
-        "job-weapon1-brk": "55",
-        "job-weapon1-mag": "60",
-        "job-weapon1-crit": "2",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/344.jpg",
-        "job-weapon2-id": "-",
-        "job-weapon2-name": "-",
-        "job-weapon2-auto1": "-",
-        "job-weapon2-auto2": "-",
-        "job-weapon2-auto3": "-",
-        "job-weapon2-auto4": "-",
-        "job-weapon2-hp": "-",
-        "job-weapon2-brk": "-",
-        "job-weapon2-mag": "-",
-        "job-weapon2-crit": "-",
-        "job-weapon2-spd": "-",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "-"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "battle-princess": {
         "job-id": "6-battle-princess",
@@ -711,14 +581,6 @@
                 "job-heal-dark": "-",
                 "job-heal-life": "5"
             },
-            "job-ultimate": {
-                "job-ultimate-name": "Agana Belea",
-                "job-ultimate-range": "Single",
-                "job-ultimate-atk": "1500",
-                "job-ultimate-brk": "1700",
-                "job-ultimate-crit": "1",
-                "job-ultimate-effects": "Faith/Boost/Snipe/Barrier/Wall/Veil"
-            },
             "job-auto-damage": {
                 "job-dmg-painful-break": "80",
                 "job-dmg-improved-criticals": "-",
@@ -753,36 +615,18 @@
                 "job-armour-break": "-",
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
-            }
+            },
+            "job-change-shift": "Light"
         },
-        "job-change-shift": "Light",
+        "job-ultimate": {
+            "job-ultimate-name": "Agana Belea",
+            "job-ultimate-range": "Single",
+            "job-ultimate-atk": "1500",
+            "job-ultimate-brk": "1700",
+            "job-ultimate-crit": "1",
+            "job-ultimate-effects": "Faith/Boost/Snipe/Barrier/Wall/Veil"
+        },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/141.jpg",
-        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png",
-        "job-weapon1-id": "6-arc-en-ciel",
-        "job-weapon1-name": "Arc En Ciel",
-        "job-weapon1-auto1": "Kill-&-Draw-2",
-        "job-weapon1-auto2": "Element-Third-Strike-1",
-        "job-weapon1-auto3": "Prism-Return-1",
-        "job-weapon1-auto4": "Ultimate-1",
-        "job-weapon1-hp": "55",
-        "job-weapon1-brk": "65",
-        "job-weapon1-mag": "50",
-        "job-weapon1-crit": "2",
-        "job-weapon1-spd": "1",
-        "job-weapon1-def": "-",
-        "job-weapon1-icon": "https://img.altema.jp/ffmobius/buki/563.jpg",
-        "job-weapon2-id": "-",
-        "job-weapon2-name": "-",
-        "job-weapon2-auto1": "-",
-        "job-weapon2-auto2": "-",
-        "job-weapon2-auto3": "-",
-        "job-weapon2-auto4": "-",
-        "job-weapon2-hp": "-",
-        "job-weapon2-brk": "-",
-        "job-weapon2-mag": "-",
-        "job-weapon2-crit": "-",
-        "job-weapon2-spd": "-",
-        "job-weapon2-def": "-",
-        "job-weapon2-icon": "-"
+        "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     }
 }
