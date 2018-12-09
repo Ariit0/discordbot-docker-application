@@ -103,7 +103,7 @@ exports.run = async (bot, msg, args) => {
 		}
 
 	} else { // sends a direct message of the list of queryable jobs
-		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`+stats\` \`+auto\` \`+ult\` | used to filter specific data types\nList of queryable jobs:\n";
+		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`-stats\` \`-auto\` \`-ult\` | used to filter specific data types\nList of queryable jobs:\n";
 		let index = 0;
 		for (let job in jobDB) {
 			index++;
@@ -235,14 +235,14 @@ function FormatAutoes (numSpace, key, fieldNames, firstEntry, keyString) {
 
 			if (firstEntry && fieldNames[key][vals] !== '-') { // first entry of a category format
 				string += ` ${auto}+${fieldNames[key][vals]}`;
-				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-drive-heal/g.test(key)) string += '%';
+				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-drive-heal/g.test(key) || /-ailment-resist/g.test(key)) string += '%';
 				string += '\n';
 				firstEntry = false;
 			} else if (firstEntry && fieldNames[key][vals] === '-' && index === Object.keys(fieldNames[key]).length - 1) { // if all entries are '-'
 				string += ` ${fieldNames[key][vals]}\n`;
 			} else if (!firstEntry && fieldNames[key][vals] !== '-') { // following entries that are not '-'
 				string += `|                 | ${auto}+${fieldNames[key][vals]}`;
-				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-drive-heal/g.test(key)) string += '%';
+				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-ailment-resist/g.test(key)) string += '%';
 				string += '\n';
 			}
 			index++;
