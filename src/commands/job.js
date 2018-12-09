@@ -9,77 +9,19 @@ exports.run = async (bot, msg, args) => {
 
 	if (typeof args !== 'undefined' && args.length > 0) {
 		try {
-			let jobAutoes = {}; // holds stat data
-			let jobAutoes1 = {}; // holds auto ability data
-			let jobAutoes2 = {}; // holds auto ability data 2
-			let jobAutoes3 = {}; // holds ultmate data
-			let jobFields = [jobAutoes, jobAutoes1, jobAutoes2, jobAutoes3];
-			let jobQueryArgs = ['+stats', '+auto', '+ult'];
-			let jobFieldHeadings = ['Stats:', 'Auto-Abilities:', '-', 'Ultimate:'];
-			let jobAutoTypes = ['HP', 'Attack', 'Break Power', 'Magic', 'Crit Chance', 'Speed', 'Defense','Element Enhance', 'Element Resist', 'Ailment Resist', 'Clutch Boons', 'Drive Heal', 'Damage', 'Break', 'Defense', 'Other', 'Job Change Shift', 'Name', 'Range', 'Attack', 'Break Power', 'Crit Chance', 'Added Effects'];
-					
 			var jobQuery = args[0]; 
-			// set variables of specific data of a job query
-			let jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
-			let jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
-			let jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
-			let jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
-			let jobOrbSet1 = JSON.stringify(jobDB[jobQuery]['job-orb-set-1']).replace(/"/g, '');
-			let jobOrbSet2 =JSON.stringify(jobDB[jobQuery]['job-orb-set-2']).replace(/"/g, '');
-			let jobOrbSet3 =JSON.stringify(jobDB[jobQuery]['job-orb-set-3']).replace(/"/g, '');
-			let jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
 
-			// seperate columns into separate categories
-			var jobShp = [];	// stat hp
-			var jobSatk = [];	// stat atk
-			var jobSbrk = [];	// stat brk
-			var jobSmag = [];	// stat mag
-			var jobScrt = [];	// stat crit
-			var jobSspd = [];	// stat spd
-			var jobSdef = [];	// stat def
-			var jobEE = [];  	// element enhance
-			var jobERES = []; 	//  resist
-			var jobARES = []; 	// ailment resist
-			var jobCLU = []; 	//  cluch boons
-			var jobDRI = []; 	// drive heal
-			var jobDMG = []; 	// damage
-			var jobBRK = []; 	// break
-			var jobDEF = []; 	// defense
-			var jobOTH = []; 	// other
-			var jobCHG = []; 	// job change shift
+			var jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
+			var jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
+			var jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
+			var jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
+			var jobOrbs = jobDB[jobQuery]['job-orbs'];
+			var jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
+			//var jobStats = JSON.stringify(jobDB[jobQuery]['job-stats']).replace(/"/g, '')
 
-			var jobULTname = []; 
-			var jobULTrange = [];
-			var jobULTatk = [];
-			var jobULTbrk = [];
-			var jobULTcrit = [];
-			var jobULTeff = [];
-			// 2D array setup for category headings
-			var jobCategories = [jobShp, jobSatk, jobSbrk, jobSmag, jobScrt, jobSspd, jobSdef, jobEE, jobERES, jobARES, jobCLU, jobDRI, jobDMG, jobBRK, jobDEF, jobOTH, jobCHG, jobULTname, jobULTrange, jobULTatk, jobULTbrk, jobULTcrit, jobULTeff]; 
-			
-			// specific case for the azure witch - the only job with 3 orbsets so far...
-			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbSet1} | ${jobOrbSet2}`;
-			if (jobQuery === "the-azure-witch") jobDesc += ` | ${jobOrbSet3}`;
-
-			// iterates through each row property and stores succeeded regex test into its respective array (category)
-			for (var fields in jobDB[jobQuery]) {
-				let fieldValues =  JSON.stringify(jobDB[jobQuery][fields]).replace(/"/g, '');
-				// generate datasets
-				JobRegex(fields, jobCategories, fieldValues)
-			}
-			// splits headings into seperate javascript objects
-			// this is done due to the discord embed field character limit (1024 characters)
-			for (var i = 0; i < jobAutoTypes.length; i++) {
-				if (i <= 6) { 
-					jobAutoes[jobAutoTypes[i]] = jobCategories[i];
-				} else if (i >= 7 && i <= 11) {
-					jobAutoes1[jobAutoTypes[i]] = jobCategories[i];
-				} else if (i >= 12 && i <= 16) {
-					jobAutoes2[jobAutoTypes[i]] = jobCategories[i];
-				} else {
-					jobAutoes3[jobAutoTypes[i]] = jobCategories[i];
-				}
-			}
+			// specific case for jobs with 3 orbsets..
+			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbs[0]} | ${jobOrbs[1]}`;
+			if (jobQuery === "the-azure-witch" || jobQuery === "freelancer" ) jobDesc += ` | ${jobOrbs[2]}`;
 
 			// base embed message template (no fields)
 			const embedMsg = new Discord.RichEmbed()
@@ -90,13 +32,12 @@ exports.run = async (bot, msg, args) => {
 			  .setThumbnail(jobThumbUrl)
 			  .setTimestamp();
 
-
 			  // full embed message with all fields
 			if (args.length === 1) {
-				msg.channel.send(embedMsg.addField("Stats", PrintJobAutoValues(jobAutoes))
-										 .addField("Auto-Abilities", PrintJobAutoValues(jobAutoes1))
-										 .addField("-", PrintJobAutoValues(jobAutoes2))
-										 .addField("Ultimate", PrintJobAutoValues(jobAutoes3))).catch(console.error);
+				msg.channel.send(embedMsg.addField("Stats", PrintJobStats(jobDB[jobQuery]['job-stats']))
+										 .addField("Auto-Abilities", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
+										 .addField("-", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))
+										 .addField("Ultimate", PrintJobStats(jobDB[jobQuery]['job-ultimate'])));
 
 			} else if (args.length === 2){ // filtered embed message based on user arg
 				try {
@@ -147,107 +88,79 @@ exports.run = async (bot, msg, args) => {
 
 
 /**
- * Pushes matching regex strings to respective arrays
- * @param  {Object} fields 
- * @param  {Array} 	arr    array for the string to be pushed
- * @param  {String} val   sting the regex is tested against
- * @return {Object} ...	 pushed array result      
- */
-function JobRegex(fields, arr, val) {
-	// Test whether at least one element passes the test and
-	// if it does push the match to the respective array
-	
-	return [
-		/job-hp/g,
-		/job-atk/g,
-		/job-brk/g,
-		/job-mag/g,
-		/job-crit/g,
-		/job-spd/g,
-		/job-def/g,
-		/job-[a-z]*-boost/g,
-		/job-[a-z]*-resist/g,
-		/job-ailment-avert/g,
-		/job-clutch-boons/g,
-		/job-heal-drive/g,
-		/job-auto-damage/g,
-		/job-auto-break/g,
-		/job-auto-defense/g,
-		/job-auto-other/g,
-		/job-change-shift/g,
-		/job-ultimate-name/g,
-		/job-ultimate-range/g,
-		/job-ultimate-atk/g,
-		/job-ultimate-brk/g,
-		/job-ultimate-crit/g,
-		/job-ultimate-eff/g
-	].some(function(reg, i) {
-		try {
-			if (reg.test(fields) === true) {
-				return arr[i].push(val);
-			} 
-		} catch (e) {
-			console.log(e);
-		}
-	});
-}
-
-/**
  * Responsible for generating code block format to be displayed in the embed message
  * @param {Array} fieldNames rowdata
  */
-function PrintJobAutoValues(fieldNames) {
-
-	let string = "```xl\n";
+function PrintJobStats(fieldNames) {
+	var string = "```xl\n";
 
 	for (var key in fieldNames) {
-		var first = true; // first value of a category
 		var numSpace = 0;
-
-		if (key.length <= 16) {
-			// 16 is the larges amount of characters for a heading
-			numSpace = 16 - key.length;
+		keyString = key.replace(/job-/g, '')
+				.replace(/-boost/g, '')
+				.replace(/-resist/g, '')
+				.replace(/ultimate-/g, '')
+				.replace(/\b\w/g, l => l.toUpperCase()
+				.replace(/-/g, ''));
+		// 16 char max length for left col
+		if (keyString.length <= 15) {
+			numSpace = 15 - keyString.length;
 		}
 
-		string += `| ${InsertSpaces(key, numSpace)} |`
+		string += `| ${InsertSpaces(keyString, numSpace)} |`;
 
-		// iterate values in a category
-		for (var i = 0; i < fieldNames[key].length; i++) {
-			numSpace = 0;
-			if (fieldNames[key][i].length <= 19) numSpace = 19 - fieldNames[key][i].length;
-		
-			if (first == true) {
-				// print the first value that isnt "-" otherwise print the last value of the column
-				if (fieldNames[key][i] !== '-') { 
-					// split string by "/" delimiter 
-					if ((/\//g.test(fieldNames[key][i])) === true) {
-						var tmp = fieldNames[key][i].split('\/');
+		numSpace = 0;
+		// 10 char max length for right col
+		if (fieldNames[key].length <= 10) numSpace = 10 - fieldNames[key].length;
+	
+		// formatting for clutch boons (there shouldnt be any that are just '-')
+		if ((/\//g.test(fieldNames[key])) === true) { 
+			var tmp = fieldNames[key].split('\/');
 
-						string += ` ${tmp[0]}\n`
-						for (var j = 1; j < tmp.length; j++) {
-							string += `|                  | ${tmp[j]}\n`; // 18 spaces
-						}
-					} else {
-						string += ` ${fieldNames[key][i]}\n`;
-					}
-
-					first = false;
-					i++;
-				} else if (i === fieldNames[key].length - 1) {
-					string += ` ${fieldNames[key][i]}\n`;
-					first = false;
-					i++;
-				} 
+			string += ` ${tmp[0]}\n`
+			for (var i = 1; i < tmp.length; i++) {
+				string += `|                 | ${tmp[i]}\n`;
+			} 
+		} else {
+			if (/ultimate-attack/g.test(key) || /ultimate-break/g.test(key)) {
+				var tmp = `${fieldNames[key]}%`;
+				string += ` ${InsertSpaces(tmp, numSpace)}`;
+			} else {
+				string += ` ${InsertSpaces(fieldNames[key], numSpace)}`;
 			}
-			// formatting for a data that isnt on the first line
-			if (first == false) {
-				if (i >= 0 && fieldNames[key][i] === '-' || i >= 0 && fieldNames[key][i] === undefined) {
-					continue; // skip input
-				} else {
-					string += `|                  | ${fieldNames[key][i]}\n`; // 18 spaces
-				}
-			}
+			string += '\n'; 
 		}
+	}
+
+	string += "```";
+	return string;
+}
+
+function PrintJobDetails(fieldNames, autoFieldVal) {
+	var string = "```xl\n";
+	var count = 0;
+
+	for (var key in fieldNames) {
+		count++;
+		var firstEntry = true; // first vale of a category
+		var numSpace = 0;
+		// heading formatting
+		if (count == Object.keys(fieldNames).length) {
+			keyString = key.replace(/\b\w/g, l => l.toUpperCase()).replace(/-/g, ' '); // job change shift
+		} else {
+			keyString = key.replace(/job-/g, '').replace(/auto-/g, '').replace(/\b\w/g, l => l.toUpperCase()).replace(/-/g, ' ');
+		}
+
+		// 16 char max length for left col
+		if (keyString.length <= 15) {
+			numSpace = 15 - keyString.length;
+		}
+
+		if (autoFieldVal == 1 && count <= 5) {
+			string += FormatAutoes(numSpace, key, fieldNames, firstEntry, keyString);
+		} else if (autoFieldVal == 2 && count >= 6) {
+			string += FormatAutoes(numSpace, key, fieldNames, firstEntry, keyString);
+		} 
 	}
 
 	string += "```";
@@ -271,3 +184,51 @@ function InsertSpaces(string, numSpace) {
 
 	return string;
 } 
+
+function FormatAutoes (numSpace, key, fieldNames, firstEntry, keyString) {
+	var string = `| ${InsertSpaces(keyString, numSpace)} |`;
+	numSpace = 0;
+	// 10 char max length for right col
+	if (fieldNames[key].length <= 10) numSpace = 10 - fieldNames[key].length;
+
+	// if the variable is an object, iterate the contents....
+	if (typeof fieldNames[key] === 'object') {
+		var index = 0;
+		for (var vals in fieldNames[key]) {
+			var auto = vals.replace(/job-/g, '')
+							.replace(/def-/g, '')
+							.replace(/dmg-/g, '')
+							.replace(/brk-/g, '')
+							.replace(/-resist/g, '')
+							.replace(/-boost/g, '')
+							.replace(/\b\w/g, l => l.toUpperCase());
+
+			if (firstEntry && fieldNames[key][vals] !== '-') { // first entry of a category format
+				string += ` ${auto}+${fieldNames[key][vals]}`;
+				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-drive-heal/g.test(key)) string += '%';
+				string += '\n';
+				firstEntry = false;
+			} else if (firstEntry && fieldNames[key][vals] === '-' && index === Object.keys(fieldNames[key]).length - 1) { // if all entries are '-'
+				string += ` ${fieldNames[key][vals]}\n`;
+			} else if (!firstEntry && fieldNames[key][vals] !== '-') { // following entries that are not '-'
+				string += `|                 | ${auto}+${fieldNames[key][vals]}`;
+				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-drive-heal/g.test(key)) string += '%';
+				string += '\n';
+			}
+			index++;
+		}
+	} else {
+		// formatting for clutch boons (there shouldnt be any that are just '-')
+		if ((/\//g.test(fieldNames[key])) === true) { 
+			var tmp = fieldNames[key].split('\/');
+
+			string += ` ${tmp[0]}\n`
+			for (var i = 1; i < tmp.length; i++) {
+				string += `|                 | ${tmp[i]}\n`;
+			} 
+		} else { // job change shift
+			string += ` ${fieldNames[key]}`;
+		}
+	}
+	return string;
+}

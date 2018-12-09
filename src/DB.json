@@ -58,8 +58,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
-                "job-dmg-improved-criticals": "-",
-                "job-dmg-exploit-weakness": "-",
+                "job-dmg-improved-crits": "-",
+                "job-dmg-weakness": "-",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -71,7 +71,7 @@
                 "job-brk-piercing-break": "-",
                 "job-brk-quick-break": "-",
                 "job-brk-flash-break": "-",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -81,7 +81,7 @@
             "job-auto-other": {
                 "job-ult-charger": "-",
                 "job-auto-ult": "-",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "-",
                 "job-ele-third": "-",
@@ -91,14 +91,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Fire"
+            "job-shift": "Fire"
         },
         "job-ultimate": {
             "job-ultimate-name": "Onion Dicer",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "900",
-            "job-ultimate-brk": "300",
-            "job-ultimate-crit": "1",
+            "job-ultimate-attack": "900",
+            "job-ultimate-break": "300",
+            "job-ultimate-crit-chance": "1",
             "job-ultimate-effects": "Brave"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/1.jpg",
@@ -163,8 +163,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
-                "job-dmg-improved-criticals": "-",
-                "job-dmg-exploit-weakness": "-",
+                "job-dmg-improved-crits": "-",
+                "job-dmg-weakness": "-",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -176,7 +176,7 @@
                 "job-brk-piercing-break": "-",
                 "job-brk-quick-break": "-",
                 "job-brk-flash-break": "-",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -186,7 +186,7 @@
             "job-auto-other": {
                 "job-ult-charger": "-",
                 "job-auto-ult": "-",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "-",
                 "job-ele-third": "-",
@@ -196,14 +196,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Wind"
+            "job-shift": "Wind"
         },
         "job-ultimate": {
             "job-ultimate-name": "Rain of Ruin",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1000",
-            "job-ultimate-brk": "250",
-            "job-ultimate-crit": "1",
+            "job-ultimate-attack": "1000",
+            "job-ultimate-break": "250",
+            "job-ultimate-crit-chance": "1",
             "job-ultimate-effects": "Faith"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/8.jpg",
@@ -268,8 +268,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
-                "job-dmg-improved-criticals": "-",
-                "job-dmg-exploit-weakness": "-",
+                "job-dmg-improved-crits": "-",
+                "job-dmg-weakness": "-",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -281,7 +281,7 @@
                 "job-brk-piercing-break": "-",
                 "job-brk-quick-break": "-",
                 "job-brk-flash-break": "-",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -291,7 +291,7 @@
             "job-auto-other": {
                 "job-ult-charger": "-",
                 "job-auto-ult": "-",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "-",
                 "job-ele-third": "-",
@@ -301,14 +301,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Water"
+            "job-shift": "Water"
         },
         "job-ultimate": {
             "job-ultimate-name": "Axle Cutter",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "800",
-            "job-ultimate-brk": "360",
-            "job-ultimate-crit": "2",
+            "job-ultimate-attack": "800",
+            "job-ultimate-break": "360",
+            "job-ultimate-crit-chance": "2",
             "job-ultimate-effects": "Boost"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/15.jpg",
@@ -373,8 +373,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "-",
-                "job-dmg-improved-criticals": "-",
-                "job-dmg-exploit-weakness": "-",
+                "job-dmg-improved-crits": "-",
+                "job-dmg-weakness": "-",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -386,7 +386,7 @@
                 "job-brk-piercing-break": "-",
                 "job-brk-quick-break": "-",
                 "job-brk-flash-break": "-",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -396,7 +396,7 @@
             "job-auto-other": {
                 "job-ult-charger": "-",
                 "job-auto-ult": "-",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "-",
                 "job-ele-third": "-",
@@ -406,14 +406,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Earth"
+            "job-shift": "Earth"
         },
         "job-ultimate": {
             "job-ultimate-name": "Fists of Fury",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "300",
-            "job-ultimate-crit": "2",
+            "job-ultimate-attack": "1500",
+            "job-ultimate-break": "300",
+            "job-ultimate-crit-chance": "2",
             "job-ultimate-effects": "Regen"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/73.jpg",
@@ -451,7 +451,7 @@
                 "job-fire-resist": "15",
                 "job-water-resist": "15",
                 "job-wind-resist": "15",
-                "job-earth-resist": "12",
+                "job-earth-resist": "15",
                 "job-light-resist": "15",
                 "job-dark-resist": "15"
             },
@@ -478,8 +478,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "20",
-                "job-dmg-improved-criticals": "20",
-                "job-dmg-exploit-weakness": "20",
+                "job-dmg-improved-crits": "20",
+                "job-dmg-weakness": "20",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -491,7 +491,7 @@
                 "job-brk-piercing-break": "-",
                 "job-brk-quick-break": "-",
                 "job-brk-flash-break": "-",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -501,7 +501,7 @@
             "job-auto-other": {
                 "job-ult-charger": "1",
                 "job-auto-ult": "3",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "1",
                 "job-ele-third": "-",
@@ -511,14 +511,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Water"
+            "job-shift": "Water"
         },
         "job-ultimate": {
             "job-ultimate-name": "Pallida Mors",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "1500",
-            "job-ultimate-crit": "3",
+            "job-ultimate-attack": "1500",
+            "job-ultimate-break": "1500",
+            "job-ultimate-crit-chance": "3",
             "job-ultimate-effects": "Debarrier/Unguard/Weaken/Crit Resist Down"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/109.jpg",
@@ -583,8 +583,8 @@
             },
             "job-auto-damage": {
                 "job-dmg-painful-break": "80",
-                "job-dmg-improved-criticals": "-",
-                "job-dmg-exploit-weakness": "-",
+                "job-dmg-improved-crits": "-",
+                "job-dmg-weakness": "-",
                 "job-dmg-scourge": "-",
                 "job-dmg-ravage": "-",
                 "job-dmg-attuned-chain": "-",
@@ -596,7 +596,7 @@
                 "job-brk-piercing-break": "70",
                 "job-brk-quick-break": "10",
                 "job-brk-flash-break": "50",
-                "job-brk-extended-break": ""
+                "job-brk-extended-break": "-"
             },
             "job-auto-defense": {
                 "job-def-steelguard": "-",
@@ -606,7 +606,7 @@
             "job-auto-other": {
                 "job-ult-charger": "1",
                 "job-auto-ult": "3",
-                "job-ext-brk": "-",
+                "job-lore": "-",
                 "job-prism-return": "-",
                 "job-kill-draw": "1",
                 "job-ele-third": "-",
@@ -616,14 +616,14 @@
                 "job-risk-taker": "-",
                 "job-high-roller": "-"
             },
-            "job-change-shift": "Light"
+            "job-shift": "Light"
         },
         "job-ultimate": {
             "job-ultimate-name": "Agana Belea",
             "job-ultimate-range": "Single",
-            "job-ultimate-atk": "1500",
-            "job-ultimate-brk": "1700",
-            "job-ultimate-crit": "1",
+            "job-ultimate-attack": "1500",
+            "job-ultimate-break": "1700",
+            "job-ultimate-crit-chance": "1",
             "job-ultimate-effects": "Faith/Boost/Snipe/Barrier/Wall/Veil"
         },
         "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/141.jpg",
