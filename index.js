@@ -15,13 +15,13 @@ let prevUserTime = {};
 /**
  * Establish mongodb server
  */
-mongoose.connect(mongoDBUrl, {useNewUrlParser: true, user: usr, pass: pwd}, function (err, db) {
-	if (!err) {
-		console.log('Connected to Database');
-	} else {
-		console.log(err);
-	}
-});
+// mongoose.connect(mongoDBUrl, {useNewUrlParser: true, user: usr, pass: pwd}, function (err, db) {
+// 	if (!err) {
+// 		console.log('Connected to Database');
+// 	} else {
+// 		console.log(err);
+// 	}
+// });
 
 /**
  * Initialise Bot
