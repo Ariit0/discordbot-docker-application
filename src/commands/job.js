@@ -9,7 +9,31 @@ exports.run = async (bot, msg, args) => {
 
 	if (typeof args !== 'undefined' && args.length > 0) {
 		try {
-			var jobQuery = args[0]; 
+			var userInput = args[0]; 
+			// less strict querying
+			var patt = new RegExp(userInput);
+			var numMatches = 0;
+			var matchedQueries = [];
+			for (var job in jobDB) {
+				if (patt.test(job)) {
+					numMatches++;
+					matchedQueries.push(job);
+				}
+			}
+
+			if (numMatches == 1) {
+				var jobQuery = matchedQueries[0];
+			} else if (numMatches > 1) {
+				jobQuery = userInput;
+				var msgString = `${msg.author.toString()}, there were multiple matches with your query. Did you mean any of the following?\n`;
+				for (var i = 0; i < matchedQueries.length; i++) {
+					msgString += `\t${i+1}.\t\`${matchedQueries[i]}\`\n`;
+				}
+				msg.channel.send(msgString);
+			} else {
+				jobQuery = userInput;
+			}
+
 			var jobQueryArgs = ['-stats', '-auto', '-ult'];
 			var jobFieldHeadings = ['Stats:', 'Auto-Abilities:', '-', 'Ultimate:'];
 
@@ -19,7 +43,6 @@ exports.run = async (bot, msg, args) => {
 			var jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
 			var jobOrbs = jobDB[jobQuery]['job-orbs'];
 			var jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
-			//var jobStats = JSON.stringify(jobDB[jobQuery]['job-stats']).replace(/"/g, '')
 
 			// specific case for jobs with 3 orbsets..
 			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbs[0]} | ${jobOrbs[1]}`;
