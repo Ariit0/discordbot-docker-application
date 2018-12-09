@@ -10,6 +10,8 @@ exports.run = async (bot, msg, args) => {
 	if (typeof args !== 'undefined' && args.length > 0) {
 		try {
 			var jobQuery = args[0]; 
+			var jobQueryArgs = ['-stats', '-auto', '-ult'];
+			var jobFieldHeadings = ['Stats:', 'Auto-Abilities:', '-', 'Ultimate:'];
 
 			var jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
 			var jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
@@ -37,9 +39,9 @@ exports.run = async (bot, msg, args) => {
 				msg.channel.send(embedMsg.addField("Stats", PrintJobStats(jobDB[jobQuery]['job-stats']))
 										 .addField("Auto-Abilities", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
 										 .addField("-", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))
-										 .addField("Ultimate", PrintJobStats(jobDB[jobQuery]['job-ultimate'])));
+										 .addField("Ultimate", PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
 
-			} else if (args.length === 2){ // filtered embed message based on user arg
+			} else if (args.length === 2) { // filtered embed message based on user arg
 				try {
 					var isMatch = false
 
@@ -49,11 +51,15 @@ exports.run = async (bot, msg, args) => {
 
 							if (i !== 1) { // embed message for stats and ultimate 
 								let index = i;
-								if (i == 2) index = i+1;
-								msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobAutoValues(jobFields[index]))).catch(console.error);
+								if (i == 2) { 
+									index = i+1;
+									msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
+								} else {
+									msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-stats']))).catch(console.error);
+								}
 							} else { // embed message for auto-abilties
-							 	msg.channel.send(embedMsg.addField(jobFieldHeadings[i], PrintJobAutoValues(jobFields[i]))
-								 		 .addField(jobFieldHeadings[i+1], PrintJobAutoValues(jobFields[i+1]))).catch(console.error);
+							 	msg.channel.send(embedMsg.addField(jobFieldHeadings[i], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
+								 		 .addField(jobFieldHeadings[i+1], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))).catch(console.error);
 							}
 							break;
 						} else {
@@ -100,8 +106,8 @@ function PrintJobStats(fieldNames) {
 				.replace(/-boost/g, '')
 				.replace(/-resist/g, '')
 				.replace(/ultimate-/g, '')
-				.replace(/\b\w/g, l => l.toUpperCase()
-				.replace(/-/g, ''));
+				.replace(/\b\w/g, l => l.toUpperCase())
+				.replace(/-/g, ' ');
 		// 16 char max length for left col
 		if (keyString.length <= 15) {
 			numSpace = 15 - keyString.length;
@@ -201,6 +207,7 @@ function FormatAutoes (numSpace, key, fieldNames, firstEntry, keyString) {
 							.replace(/brk-/g, '')
 							.replace(/-resist/g, '')
 							.replace(/-boost/g, '')
+							.replace(/heal-/g, '')
 							.replace(/\b\w/g, l => l.toUpperCase());
 
 			if (firstEntry && fieldNames[key][vals] !== '-') { // first entry of a category format
