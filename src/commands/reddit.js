@@ -1,5 +1,5 @@
 /**
- * This method is responsible for querying job data from DB.json
+ * This method is responsible for querying job data from DB.json in table format for reddit wiki
  */
 const Discord = require('discord.js');
 const fs = require('fs');
@@ -47,14 +47,13 @@ exports.run = async (bot, msg, args) => {
 			// specific case for jobs with 3 orbsets..
 			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbs[0]} | ${jobOrbs[1]}`;
 			if (jobQuery === "the-azure-witch" || jobQuery === "freelancer" ) jobDesc += ` | ${jobOrbs[2]}`;
-
+			//			  .setThumbnail(jobThumbUrl)
 			// base embed message template (no fields)
 			const embedMsg = new Discord.RichEmbed()
 			  .setAuthor(jobName, jobClassIcon)
 			  .setColor(3447003)
 			  .setDescription(jobDesc)
 			  .setFooter(msg.author.username + "'s request", msg.author.avatarURL)
-			  .setThumbnail(jobThumbUrl)
 			  .setTimestamp();
 
 			  // full embed message with all fields
