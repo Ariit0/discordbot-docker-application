@@ -11,27 +11,20 @@ exports.run = async (bot, msg, args) => {
 		try {
 			var userInput = args[0]; 
 			// less strict querying
-			var patt = new RegExp(userInput);
-			var numMatches = 0;
+			var patt = new RegExp('\\b'+ userInput.replace(/[-\[\]]+/g, '').toLowerCase() + '$\\b');
+			var count = 0;
 			var matchedQueries = [];
 			for (var job in jobDB) {
-				if (patt.test(job)) {
-					numMatches++;
-					matchedQueries.push(job);
+				count++;
+				if (patt.test(job.replace(/[-\[\]]+/g, ''))) {
+					jobQuery = job;
+					break;
 				}
-			}
 
-			if (numMatches == 1) {
-				var jobQuery = matchedQueries[0];
-			} else if (numMatches > 1) {
-				jobQuery = userInput;
-				var msgString = `${msg.author.toString()}, there were multiple matches with your query. Did you mean any of the following?\n`;
-				for (var i = 0; i < matchedQueries.length; i++) {
-					msgString += `\t${i+1}.\t\`${matchedQueries[i]}\`\n`;
+				if (count === Object.keys(jobDB).length) {
+					jobQuery = userInput;
+					break;
 				}
-				msg.channel.send(msgString);
-			} else {
-				jobQuery = userInput;
 			}
 
 			var jobQueryArgs = ['-stats', '-auto', '-ult'];
@@ -102,13 +95,7 @@ exports.run = async (bot, msg, args) => {
 		}
 
 	} else { // sends a direct message of the list of queryable jobs
-		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`-stats\` \`-auto\` \`-ult\` | used to filter specific data types\nList of queryable jobs:\n";
-		let index = 0;
-		for (let job in jobDB) {
-			index++;
-			message += `\t${index}.\t\`${job}\`\n`;
-		}
-		message += "";
+		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`-stats\` \`-auto\` \`-ult\` | used to filter specific data types\n";
 		msg.channel.send(`${msg.author.toString()}, Sent you a DM with information.`).catch(console.error);
 		msg.author.send(message).catch(console.error);
 	}

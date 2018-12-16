@@ -12,6 +12,7 @@ const JobSchema = require('../models/jobmodel');
 var doc = new Sheet(config.sheetID);
 
 exports.run = async (bot, msg, args) => {
+
 	// only owner can use this command
 	if (msg.author.id !== process.env.OWNER) return;
 
@@ -20,7 +21,7 @@ exports.run = async (bot, msg, args) => {
 		msg.channel.send(`${msg.author.toString()} Moggy is updating, please be patient Kupo!`).catch(console.error);
 
 		doc.getRows(1, function (err, rows) {
-
+			
 			/**
 			 * Method use to pull row data and sanitise for JSON formatting (pretty messy)
 			 */
@@ -35,7 +36,7 @@ exports.run = async (bot, msg, args) => {
 			var myJSON = JSON.stringify(rows);
 
 			// grab headings with the prefix "job-" and only store the first occurrence of it
-			var colHeading = myJSON.match(/\"([a-z0-9]{3}-[a-z0-9]*-?[a-z0-9]*-?[a-z0-9]*)\"(?![\s\S]+\1)/g);	
+			var colHeading = myJSON.match(/\"([a-z]{3}-[a-z0-9]*-?[a-z0-9]*-?[a-z0-9]*)\"(?![\s\S]+\1)/g);	
 
 			// grabs row data denoted with the prefix ":\""
 			var rowData = myJSON.match(rowRegex);
@@ -47,7 +48,7 @@ exports.run = async (bot, msg, args) => {
 					headings[i] = colHeading[i].toString().replace(/\"/g, '');
 				}
 				// remove colon and quotations around string
-				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&+%.:\[\]']]*/g, '');
+				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&+%.:']]*/g, '');
 			}
 
 			// parent key (the field the user uses to search)
@@ -181,7 +182,6 @@ exports.run = async (bot, msg, args) => {
 				});
 			});
 		});
-	});
-				
+	});	
 }
 
