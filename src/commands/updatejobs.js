@@ -16,6 +16,9 @@ exports.run = async (bot, msg, args) => {
 	if (msg.author.id !== process.env.OWNER) return;
 
 	doc.useServiceAccountAuth(auth, function (err)  {
+
+		msg.channel.send(`${msg.author.toString()} Moggy is updating, please be patient Kupo!`).catch(console.error);
+
 		doc.getRows(1, function (err, rows) {
 
 			/**
@@ -26,7 +29,7 @@ exports.run = async (bot, msg, args) => {
 			var data = [];
 			var keys = [];
 			// regex to test against to pull row cell data
-			var rowRegex = /\"[-A-Z a-z 0-9 /&+%.]*\"}|\"([-A-Z a-z 0-9 /&+%.]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g;
+			var rowRegex = /\"[-A-Z a-z 0-9 /&+%.'\[\]]*\"}|\"([-A-Z a-z 0-9 /&+%.'\[\]]*)\",|"https?:\/\/[imgur.-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"/g;
 
 			// convert object to string
 			var myJSON = JSON.stringify(rows);
@@ -44,7 +47,7 @@ exports.run = async (bot, msg, args) => {
 					headings[i] = colHeading[i].toString().replace(/\"/g, '');
 				}
 				// remove colon and quotations around string
-				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&+%.:]*/g, '');
+				data[i] = rowData[i].toString().replace(/[^-A-za-z0-9 /&+%.:\[\]']]*/g, '');
 			}
 
 			// parent key (the field the user uses to search)
@@ -75,6 +78,7 @@ exports.run = async (bot, msg, args) => {
 				singleRows.push(subSingleRow);
 				headerArray.push(subHeaderArray); // column headings
 			}
+
 			// merge child key and child object pairs into a single parent object
 			// also group key pairs of the same type under a sub-parent key
 			// TODO: restructure for weapon columns....
@@ -168,17 +172,16 @@ exports.run = async (bot, msg, args) => {
 			// handles writing to DB.json
 			fs.open('./src/DB.json', 'w', (err, fd) => {
 				if (err) throw err;
-
 				fs.write(fd, buffer, 0, buffer.length, null, (err) => {
 					if (err) throw err;
 
 					fs.close(fd, () => {
-						console.log('DB Updated');
+						msg.channel.send(`${msg.author.toString()} Updated Kupo!`).catch(console.error);
 					});
 				});
 			});
 		});
 	});
-				msg.channel.send('DB Updated').catch(console.error);
+				
 }
 
