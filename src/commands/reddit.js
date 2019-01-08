@@ -227,7 +227,7 @@ function FormatAutoes (numSpace, key, fieldNames, firstEntry, keyString) {
 			} else if (firstEntry && fieldNames[key][vals] === '-' && index === Object.keys(fieldNames[key]).length - 1) { // if all entries are '-'
 				string += ` ${fieldNames[key][vals]}\n`;
 			} else if (!firstEntry && fieldNames[key][vals] !== '-') { // following entries that are not '-'
-				string += `|                 | ${auto}+${fieldNames[key][vals]}`;
+				string += `|                 | ${auto} +${fieldNames[key][vals]}`;
 				if (/job-element-/g.test(key) || /-damage/g.test(key) || /-break/g.test(key) || /-defense/g.test(key) || /-ailment-resist/g.test(key)) string += '%';
 				string += '\n';
 			}
