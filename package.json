@@ -4,7 +4,7 @@
   "description": "discordbot-docker-application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,10 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "google-spreadsheet": "^2.0.7",
     "googleapis": "^27.0.0",
-    "mongoose": "^5.4.19",
     "superagent": "^3.8.3"
   }
 }

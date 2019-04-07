@@ -7,7 +7,6 @@ const fs = require('fs');
 let currUserTime = {}; 
 let prevUserTime = {};
 
-
 /**
  * Initialise Bot
  */
@@ -25,23 +24,6 @@ for (const file of cmdFiles) {
 	bot.commands.set(cmd.name, cmd);
 	//console.log(bot.commands);
 }
-
-
-// fs.readdir('./src/commands/', (err, files) => {
-// 	if(err) console.log(err);
-
-// 	// take the name of the javascript file as command
-// 	files.forEach(file => {
-// 		// file must be a JS file otherwise ignore it
-// 		if (!file.endsWith(".js")) return;
-
-// 		const cmd = require(`./src/commands/${file}`);
-// 		let cmdName = file.split('.')[0];
-
-// 		bot.on(cmdName, cmd.bind(null, bot));
-// 		delete require.cache[require.resolve(`./src/commands/${file}`)];
-// 	});
-// });
 
 /**
  * Bot's awake method, used to intialise and establish bot's current settings 
@@ -92,3 +74,31 @@ bot.on('error', (e) => console.error(e));
  * Login bot 
  */
 bot.login();
+
+/**
+ * ================================================
+ * Web environment - express
+ * ================================================
+ */
+const express = require('express');
+const app = express();
+
+// port set by heroku
+const port = process.env.PORT || 5000;
+
+app.use(express.static(__dirname + '/src/public'));
+app.set('views', __dirname + '/src/views');
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+	res.render('index');
+});
+
+app.listen(port, () => {
+	console.log('lisenting on port: ' + port);
+});
+
+// 15min heartbeat
+setInterval(() => {
+	http.get('http://moggy-bot.herokuapp.com');
+}, 900000);

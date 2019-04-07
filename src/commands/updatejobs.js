@@ -5,8 +5,6 @@ const config  = require('../config.json');
 const Sheet = require('google-spreadsheet');
 const auth = require('../client_secret.json');
 const fs = require('fs');
-const mongoose = require('mongoose');
-const JobSchema = require('../models/jobmodel');
 
 // create sheet object using spreadsheet ID
 var doc = new Sheet(config.sheetID);
