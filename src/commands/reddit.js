@@ -5,99 +5,102 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const jobDB = require('../DB.json');
 
-module.exports = async (bot, msg, args) => {
-
-	if (typeof args !== 'undefined' && args.length > 0) {
-		try {
-			var userInput = args[0]; 
-			// less strict querying
-			var patt = new RegExp('\\b'+ userInput.replace(/[-\[\]]+/g, '').toLowerCase() + '$\\b');
-			var count = 0;
-			var matchedQueries = [];
-			for (var job in jobDB) {
-				count++;
-				if (patt.test(job.replace(/[-\[\]]+/g, ''))) {
-					jobQuery = job;
-					break;
-				}
-
-				if (count === Object.keys(jobDB).length) {
-					jobQuery = userInput;
-					break;
-				}
-			}
-
-			var jobQueryArgs = ['-stats', '-auto', '-ult'];
-			var jobFieldHeadings = ['Stats:', 'Auto-Abilities:', '-', 'Ultimate:'];
-
-			var jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
-			var jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
-			var jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
-			var jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
-			var jobOrbs = jobDB[jobQuery]['job-orbs'];
-			var jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
-
-			// specific case for jobs with 3 orbsets..
-			var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbs[0]} | ${jobOrbs[1]}`;
-			if (jobQuery === "the-azure-witch" || jobQuery === "freelancer" ) jobDesc += ` | ${jobOrbs[2]}`;
-			//			  .setThumbnail(jobThumbUrl)
-			// base embed message template (no fields)
-			const embedMsg = new Discord.RichEmbed()
-			  .setAuthor(jobName, jobClassIcon)
-			  .setColor(3447003)
-			  .setDescription(jobDesc)
-			  .setFooter(msg.author.username + "'s request", msg.author.avatarURL)
-			  .setTimestamp();
-
-			  // full embed message with all fields
-			if (args.length === 1) {
-				msg.channel.send(embedMsg.addField("Stats", PrintJobStats(jobDB[jobQuery]['job-stats']))
-										 .addField("Auto-Abilities", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
-										 .addField("-", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))
-										 .addField("Ultimate", PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
-
-			} else if (args.length === 2) { // filtered embed message based on user arg
-				try {
-					var isMatch = false
-
-					for (var i = 0; i < jobQueryArgs.length; i++) {
-						if (args[1] === jobQueryArgs[i]) {
-							isMatch = true;
-
-							if (i !== 1) { // embed message for stats and ultimate 
-								let index = i;
-								if (i == 2) { 
-									index = i+1;
-									msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
-								} else {
-									msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-stats']))).catch(console.error);
-								}
-							} else { // embed message for auto-abilties
-							 	msg.channel.send(embedMsg.addField(jobFieldHeadings[i], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
-								 		 .addField(jobFieldHeadings[i+1], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))).catch(console.error);
-							}
-							break;
-						} else {
-							isMatch = false
-						}
+module.exports = {
+	name: 'reddit',
+	description: '---',
+	async execute (msg, args) {
+		if (typeof args !== 'undefined' && args.length > 0) {
+			try {
+				var userInput = args[0]; 
+				// less strict querying
+				var patt = new RegExp('\\b'+ userInput.replace(/[-\[\]]+/g, '').toLowerCase() + '$\\b');
+				var count = 0;
+				var matchedQueries = [];
+				for (var job in jobDB) {
+					count++;
+					if (patt.test(job.replace(/[-\[\]]+/g, ''))) {
+						jobQuery = job;
+						break;
 					}
-					// Error checking for invalid arguement input
-					if (isMatch === false) throw argError;
 
-				} catch (argError) {
-					console.log(argError);
-					msg.channel.send(`:x: \`${args[1]}\` is an invalid argument.`).catch(console.error);
+					if (count === Object.keys(jobDB).length) {
+						jobQuery = userInput;
+						break;
+					}
 				}
-			}
-		} catch (e) {
-			console.log(e);
-			msg.channel.send(`:x: \`${jobQuery}\` is an invalid job.`).catch(console.error);
-		}
 
-	} else { // sends a direct message of the list of queryable jobs
-		let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`-stats\` \`-auto\` \`-ult\` | used to filter specific data types\n";
-		msg.channel.send(`${msg.author.toString()}, Sent you a DM with information.`).catch(console.error);
-		msg.author.send(message).catch(console.error);
+				var jobQueryArgs = ['-stats', '-auto', '-ult'];
+				var jobFieldHeadings = ['Stats:', 'Auto-Abilities:', '-', 'Ultimate:'];
+
+				var jobType = JSON.stringify(jobDB[jobQuery]['job-type']).replace(/"/g, '');
+				var jobName = JSON.stringify(jobDB[jobQuery]['job-name']).replace(/"/g, '');
+				var jobClassIcon = JSON.stringify(jobDB[jobQuery]['job-class-icon']).replace(/"/g, '');
+				var jobThumbUrl = JSON.stringify(jobDB[jobQuery]['job-thumbnail']).replace(/"/g, '');
+				var jobOrbs = jobDB[jobQuery]['job-orbs'];
+				var jobMpRole = JSON.stringify(jobDB[jobQuery]['job-mp-role']).replace(/"/g, '');
+
+				// specific case for jobs with 3 orbsets..
+				var jobDesc = `**${jobType}** - ${jobMpRole} : ${jobOrbs[0]} | ${jobOrbs[1]}`;
+				if (jobQuery === "the-azure-witch" || jobQuery === "freelancer" ) jobDesc += ` | ${jobOrbs[2]}`;
+				//			  .setThumbnail(jobThumbUrl)
+				// base embed message template (no fields)
+				const embedMsg = new Discord.RichEmbed()
+				.setAuthor(jobName, jobClassIcon)
+				.setColor(3447003)
+				.setDescription(jobDesc)
+				.setFooter(msg.author.username + "'s request", msg.author.avatarURL)
+				.setTimestamp();
+
+				// full embed message with all fields
+				if (args.length === 1) {
+					msg.channel.send(embedMsg.addField("Stats", PrintJobStats(jobDB[jobQuery]['job-stats']))
+											.addField("Auto-Abilities", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
+											.addField("-", PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))
+											.addField("Ultimate", PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
+
+				} else if (args.length === 2) { // filtered embed message based on user arg
+					try {
+						var isMatch = false
+
+						for (var i = 0; i < jobQueryArgs.length; i++) {
+							if (args[1] === jobQueryArgs[i]) {
+								isMatch = true;
+
+								if (i !== 1) { // embed message for stats and ultimate 
+									let index = i;
+									if (i == 2) { 
+										index = i+1;
+										msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-ultimate']))).catch(console.error);
+									} else {
+										msg.channel.send(embedMsg.addField(jobFieldHeadings[index], PrintJobStats(jobDB[jobQuery]['job-stats']))).catch(console.error);
+									}
+								} else { // embed message for auto-abilties
+									msg.channel.send(embedMsg.addField(jobFieldHeadings[i], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 1))
+											.addField(jobFieldHeadings[i+1], PrintJobDetails(jobDB[jobQuery]['job-autoes'], 2))).catch(console.error);
+								}
+								break;
+							} else {
+								isMatch = false
+							}
+						}
+						// Error checking for invalid arguement input
+						if (isMatch === false) throw argError;
+
+					} catch (argError) {
+						console.log(argError);
+						msg.channel.send(`:x: \`${args[1]}\` is an invalid argument.`).catch(console.error);
+					}
+				}
+			} catch (e) {
+				console.log(e);
+				msg.channel.send(`:x: \`${jobQuery}\` is an invalid job.`).catch(console.error);
+			}
+
+		} else { // sends a direct message of the list of queryable jobs
+			let message = "**Format:** \`./job <job-query> <argument>\`\n**Arguments:** \`-stats\` \`-auto\` \`-ult\` | used to filter specific data types\n";
+			msg.channel.send(`${msg.author.toString()}, Sent you a DM with information.`).catch(console.error);
+			msg.author.send(message).catch(console.error);
+		}
 	}
 }
 
