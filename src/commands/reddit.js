@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const jobDB = require('../DB.json');
 
-exports.run = async (bot, msg, args) => {
+module.exports = async (bot, msg, args) => {
 
 	if (typeof args !== 'undefined' && args.length > 0) {
 		try {

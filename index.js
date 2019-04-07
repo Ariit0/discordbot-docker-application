@@ -2,49 +2,46 @@ const Discord = require('discord.js');
 // Enable Environmental Variables for online deployment
 require('dotenv').config({ path : './src/config.env'});
 const fs = require('fs'); 
-const mongoose = require('mongoose');
 
-var mongoDBUrl = process.env.MONGOLAB_URI;
-
-const usr = process.env.MONGOLAB_USER
-const pwd = process.env.MONGOLAB_PASS
 // user state data
 let currUserTime = {}; 
 let prevUserTime = {};
 
-/**
- * Establish mongodb server
- */
-// mongoose.connect(mongoDBUrl, {useNewUrlParser: true, user: usr, pass: pwd}, function (err, db) {
-// 	if (!err) {
-// 		console.log('Connected to Database');
-// 	} else {
-// 		console.log(err);
-// 	}
-// });
 
 /**
  * Initialise Bot
  */
 const bot = new Discord.Client();
+bot.commands = new Discord.Collection();
 
 /**
  * Reads commands folder and attaches event file to corresponding event
  */
-fs.readdir('./src/commands/', (err, files) => {
-	if(err) console.log(err);
+const cmdFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
 
-	// take the name of the javascript file as command
-	files.forEach(file => {
-		// file must be a JS file otherwise ignore it
-		if (!file.endsWith(".js")) return;
+for (const file of cmdFiles) {
+	const cmd = require(`./src/commands/${file}`);
+	//console.log(file);
+	bot.commands.set(cmd.name, cmd);
+	//console.log(bot.commands);
+}
 
-		let cmd = require(`./src/commands/${file}`);
-		let cmdName = file.split('.')[0];
-		// Call events with variable number of arguments
-		bot.on(cmdName, (...args) => eventFunction.run(bot, ...args));
-	});
-});
+
+// fs.readdir('./src/commands/', (err, files) => {
+// 	if(err) console.log(err);
+
+// 	// take the name of the javascript file as command
+// 	files.forEach(file => {
+// 		// file must be a JS file otherwise ignore it
+// 		if (!file.endsWith(".js")) return;
+
+// 		const cmd = require(`./src/commands/${file}`);
+// 		let cmdName = file.split('.')[0];
+
+// 		bot.on(cmdName, cmd.bind(null, bot));
+// 		delete require.cache[require.resolve(`./src/commands/${file}`)];
+// 	});
+// });
 
 /**
  * Bot's awake method, used to intialise and establish bot's current settings 
@@ -64,13 +61,17 @@ bot.on('message', async (msg) => {
     const args = msg.content.slice(process.env.PREFIX.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
     const now = new Date(); 
+
+    if (!bot.commands.has(cmd)) return;
+
 	try {
-		let cmdFile = require(`./src/commands/${cmd}.js`);
+		//let cmdFile = require(`./src/commands/${cmd}.js`);
 		currUserTime[msg.author.id] = now;
 		if (prevUserTime[msg.author.id] == null) prevUserTime[msg.author.id] = 0;
 
 		if (currUserTime[msg.author.id] - prevUserTime[msg.author.id] > Math.round(0.165 * 60 * 1000)) { // if its been more than 10 seconds
-			cmdFile.run(bot, msg, args);
+			bot.commands.get(cmd).execute(msg, args);
+			//cmdFile.run(bot, msg, args);
 			prevUserTime[msg.author.id] = now;
 		} else {
 			msg.channel.send(`${msg.author.toString()}, you may not use the \`${cmd}\` command for another `+

@@ -19,10 +19,10 @@
   "homepage": "https://github.com/Ariit0/discordbot-docker-application#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "dotenv": "^6.1.0",
-    "google-spreadsheet": "^2.0.6",
+    "dotenv": "^6.2.0",
+    "google-spreadsheet": "^2.0.7",
     "googleapis": "^27.0.0",
-    "mongoose": "^5.3.12",
+    "mongoose": "^5.4.19",
     "superagent": "^3.8.3"
   }
 }
