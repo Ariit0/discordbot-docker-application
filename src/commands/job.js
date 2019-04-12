@@ -80,7 +80,7 @@ module.exports = {
 				if (args.length === 1) {
 					msg.channel.send(embedMsg.addField("Stats", PrintData(jobDB[jobQuery]['job-stats']), true)
 											 .addField("Ultimate", PrintData(jobDB[jobQuery]['job-ultimate']), true)
-											 .addField("Auto-Abilities", PrintAutoes(jobDB[jobQuery]['job-autoes']), true)
+											 .addField("Auto-Abilities", "WIP", true)
 											 .addField("bleh", "something somethign", true)).catch(console.error);
 
 				} else if (args.length === 2) { // filtered embed message based on user arg
