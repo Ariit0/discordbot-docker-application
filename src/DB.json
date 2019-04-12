@@ -734,8 +734,113 @@
         "job-thumbnail": "",
         "job-class-icon": ""
     },
+    "epeiste": {
+        "job-id": "8-epeiste",
+        "job-type": "Graff",
+        "job-name": "Epeiste",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
     "warrior": {
-        "job-id": "8-warrior",
+        "job-id": "9-warrior",
         "job-type": "Warrior",
         "job-name": "Warrior",
         "job-stats": {
@@ -836,11 +941,11 @@
             "job-ultimate-crit-chance": "-",
             "job-ultimate-effects": "-"
         },
-        "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/109.jpg",
+        "job-thumbnail": "",
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "knight": {
-        "job-id": "9-knight",
+        "job-id": "10-knight",
         "job-type": "Warrior",
         "job-name": "Knight",
         "job-stats": {
@@ -941,11 +1046,11 @@
             "job-ultimate-crit-chance": "-",
             "job-ultimate-effects": "-"
         },
-        "job-thumbnail": "https://img.altema.jp/ffmobius/job/ico/141.jpg",
+        "job-thumbnail": "",
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "mage": {
-        "job-id": "10-mage",
+        "job-id": "11-mage",
         "job-type": "Mage",
         "job-name": "Mage",
         "job-stats": {
@@ -1050,7 +1155,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "white-mage": {
-        "job-id": "11-white-mage",
+        "job-id": "12-white-mage",
         "job-type": "Mage",
         "job-name": "White Mage",
         "job-stats": {
@@ -1155,7 +1260,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "ranger": {
-        "job-id": "12-ranger",
+        "job-id": "13-ranger",
         "job-type": "Ranger",
         "job-name": "Ranger",
         "job-stats": {
@@ -1260,7 +1365,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "hunter": {
-        "job-id": "13-hunter",
+        "job-id": "14-hunter",
         "job-type": "Ranger",
         "job-name": "Hunter",
         "job-stats": {
@@ -1365,7 +1470,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "dark-knight": {
-        "job-id": "14-dark-knight",
+        "job-id": "15-dark-knight",
         "job-type": "Warrior",
         "job-name": "Dark Knight",
         "job-stats": {
@@ -1470,7 +1575,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "black-mage": {
-        "job-id": "15-black-mage",
+        "job-id": "16-black-mage",
         "job-type": "Mage",
         "job-name": "Black Mage",
         "job-stats": {
@@ -1575,7 +1680,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "thief": {
-        "job-id": "16-thief",
+        "job-id": "17-thief",
         "job-type": "Ranger",
         "job-name": "Thief",
         "job-stats": {
@@ -1680,7 +1785,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "samurai": {
-        "job-id": "17-samurai",
+        "job-id": "18-samurai",
         "job-type": "Warrior",
         "job-name": "Samurai",
         "job-stats": {
@@ -1785,7 +1890,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "red-mage": {
-        "job-id": "18-red-mage",
+        "job-id": "19-red-mage",
         "job-type": "Mage",
         "job-name": "Red Mage",
         "job-stats": {
@@ -1890,7 +1995,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "assassin": {
-        "job-id": "19-assassin",
+        "job-id": "20-assassin",
         "job-type": "Ranger",
         "job-name": "Assassin",
         "job-stats": {
@@ -1995,7 +2100,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "dragoon": {
-        "job-id": "20-dragoon",
+        "job-id": "21-dragoon",
         "job-type": "Warrior",
         "job-name": "Dragoon",
         "job-stats": {
@@ -2100,7 +2205,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "scholar": {
-        "job-id": "21-scholar",
+        "job-id": "22-scholar",
         "job-type": "Mage",
         "job-name": "Scholar",
         "job-stats": {
@@ -2205,7 +2310,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "dancer": {
-        "job-id": "22-dancer",
+        "job-id": "23-dancer",
         "job-type": "Ranger",
         "job-name": "Dancer",
         "job-stats": {
@@ -2310,7 +2415,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "ace-striker": {
-        "job-id": "23-ace-striker",
+        "job-id": "24-ace-striker",
         "job-type": "Warrior",
         "job-name": "Ace Striker",
         "job-stats": {
@@ -2415,7 +2520,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "mythic-sage": {
-        "job-id": "24-mythic-sage",
+        "job-id": "25-mythic-sage",
         "job-type": "Mage",
         "job-name": "Mythic Sage",
         "job-stats": {
@@ -2520,7 +2625,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "mythic-ninja": {
-        "job-id": "25-mythic-ninja",
+        "job-id": "26-mythic-ninja",
         "job-type": "Ranger",
         "job-name": "Mythic Ninja",
         "job-stats": {
@@ -2625,7 +2730,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "mythic-knight": {
-        "job-id": "26-mythic-knight",
+        "job-id": "27-mythic-knight",
         "job-type": "Warrior",
         "job-name": "Mythic Knight",
         "job-stats": {
@@ -2730,7 +2835,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "paladin": {
-        "job-id": "27-paladin",
+        "job-id": "28-paladin",
         "job-type": "Warrior",
         "job-name": "Paladin",
         "job-stats": {
@@ -2835,7 +2940,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "devout": {
-        "job-id": "28-devout",
+        "job-id": "29-devout",
         "job-type": "Mage",
         "job-name": "Devout",
         "job-stats": {
@@ -2940,7 +3045,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "viking": {
-        "job-id": "29-viking",
+        "job-id": "30-viking",
         "job-type": "Ranger",
         "job-name": "Viking",
         "job-stats": {
@@ -3045,7 +3150,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "soldier-st-class": {
-        "job-id": "30-soldier-1st-class",
+        "job-id": "31-soldier-1st-class",
         "job-type": "Warrior",
         "job-name": "Soldier 1st Class",
         "job-stats": {
@@ -3150,7 +3255,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "rogue": {
-        "job-id": "31-rogue",
+        "job-id": "32-rogue",
         "job-type": "Ranger",
         "job-name": "Rogue",
         "job-stats": {
@@ -3255,7 +3360,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "berserker": {
-        "job-id": "32-berserker",
+        "job-id": "33-berserker",
         "job-type": "Warrior",
         "job-name": "Berserker",
         "job-stats": {
@@ -3360,7 +3465,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "heretic-knight": {
-        "job-id": "33-heretic-knight",
+        "job-id": "34-heretic-knight",
         "job-type": "Warrior",
         "job-name": "Heretic Knight",
         "job-stats": {
@@ -3465,7 +3570,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "occultist": {
-        "job-id": "34-occultist",
+        "job-id": "35-occultist",
         "job-type": "Mage",
         "job-name": "Occultist",
         "job-stats": {
@@ -3570,7 +3675,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "monk": {
-        "job-id": "35-monk",
+        "job-id": "36-monk",
         "job-type": "Monk",
         "job-name": "Monk",
         "job-stats": {
@@ -3675,7 +3780,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "pugilist": {
-        "job-id": "36-pugilist",
+        "job-id": "37-pugilist",
         "job-type": "Monk",
         "job-name": "Pugilist",
         "job-stats": {
@@ -3780,7 +3885,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "grappler": {
-        "job-id": "37-grappler",
+        "job-id": "38-grappler",
         "job-type": "Monk",
         "job-name": "Grappler",
         "job-stats": {
@@ -3885,7 +3990,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "bard": {
-        "job-id": "38-bard",
+        "job-id": "39-bard",
         "job-type": "Ranger",
         "job-name": "Bard",
         "job-stats": {
@@ -3990,7 +4095,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "hermit": {
-        "job-id": "39-hermit",
+        "job-id": "40-hermit",
         "job-type": "Monk",
         "job-name": "Hermit",
         "job-stats": {
@@ -4095,7 +4200,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "tactician": {
-        "job-id": "40-tactician",
+        "job-id": "41-tactician",
         "job-type": "Mage",
         "job-name": "Tactician",
         "job-stats": {
@@ -4200,7 +4305,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "judge-magister": {
-        "job-id": "41-judge-magister",
+        "job-id": "42-judge-magister",
         "job-type": "Ranger",
         "job-name": "Judge Magister",
         "job-stats": {
@@ -4305,7 +4410,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "high-wind": {
-        "job-id": "42-high-wind",
+        "job-id": "43-high-wind",
         "job-type": "Warrior",
         "job-name": "High Wind",
         "job-stats": {
@@ -4410,7 +4515,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "balamb-mercenary": {
-        "job-id": "43-balamb-mercenary",
+        "job-id": "44-balamb-mercenary",
         "job-type": "Warrior",
         "job-name": "Balamb Mercenary",
         "job-stats": {
@@ -4515,7 +4620,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "tonberry-suit": {
-        "job-id": "44-tonberry-suit",
+        "job-id": "45-tonberry-suit",
         "job-type": "Mage",
         "job-name": "Tonberry Suit",
         "job-stats": {
@@ -4619,10 +4724,10 @@
         "job-thumbnail": "-",
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
-    "thieves-of-tantalus": {
-        "job-id": "45-thieves-of-tantalus",
+    "thief-of-tantalus": {
+        "job-id": "46-thief-of-tantalus",
         "job-type": "Ranger",
-        "job-name": "Thieves of Tantalus",
+        "job-name": "Thief of Tantalus",
         "job-stats": {
             "job-hp": "12236",
             "job-attack": "395",
@@ -4725,7 +4830,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "moogle-suit": {
-        "job-id": "46-moogle-suit",
+        "job-id": "47-moogle-suit",
         "job-type": "Monk",
         "job-name": "Moogle Suit",
         "job-stats": {
@@ -4830,7 +4935,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "hopes-guide": {
-        "job-id": "47-hope's-guide",
+        "job-id": "48-hope's-guide",
         "job-type": "Mage",
         "job-name": "Hope's Guide",
         "job-stats": {
@@ -4935,7 +5040,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "unbroken-hero": {
-        "job-id": "48-unbroken-hero",
+        "job-id": "49-unbroken-hero",
         "job-type": "Monk",
         "job-name": "Unbroken Hero",
         "job-stats": {
@@ -5040,7 +5145,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "lightning": {
-        "job-id": "49-lightning",
+        "job-id": "50-lightning",
         "job-type": "Ranger",
         "job-name": "Lightning",
         "job-stats": {
@@ -5145,7 +5250,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "knight-of-etro": {
-        "job-id": "50-knight-of-etro",
+        "job-id": "51-knight-of-etro",
         "job-type": "Warrior",
         "job-name": "Knight of Etro",
         "job-stats": {
@@ -5250,7 +5355,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "last-hunter": {
-        "job-id": "51-last-hunter",
+        "job-id": "52-last-hunter",
         "job-type": "Ranger",
         "job-name": "Last Hunter",
         "job-stats": {
@@ -5355,7 +5460,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "fauviste": {
-        "job-id": "52-fauviste",
+        "job-id": "53-fauviste",
         "job-type": "Meia",
         "job-name": "Fauviste",
         "job-stats": {
@@ -5460,7 +5565,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "warrior-[hof]": {
-        "job-id": "53-warrior-[hof]",
+        "job-id": "54-warrior-[hof]",
         "job-type": "Warrior",
         "job-name": "Warrior [HoF]",
         "job-stats": {
@@ -5565,7 +5670,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "mage-[hof]": {
-        "job-id": "54-mage-[hof]",
+        "job-id": "55-mage-[hof]",
         "job-type": "Mage",
         "job-name": "Mage [HoF]",
         "job-stats": {
@@ -5670,7 +5775,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "ranger-[hof]": {
-        "job-id": "55-ranger-[hof]",
+        "job-id": "56-ranger-[hof]",
         "job-type": "Ranger",
         "job-name": "Ranger [HoF]",
         "job-stats": {
@@ -5775,7 +5880,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "knight-[hof]": {
-        "job-id": "56-knight-[hof]",
+        "job-id": "57-knight-[hof]",
         "job-type": "Warrior",
         "job-name": "Knight [HoF]",
         "job-stats": {
@@ -5880,7 +5985,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "esmeralda": {
-        "job-id": "57-esmeralda",
+        "job-id": "58-esmeralda",
         "job-type": "Meia",
         "job-name": "Esmeralda",
         "job-stats": {
@@ -5985,7 +6090,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "hunter-[hof]": {
-        "job-id": "58-hunter-[hof]",
+        "job-id": "59-hunter-[hof]",
         "job-type": "Ranger",
         "job-name": "Hunter [HoF]",
         "job-stats": {
@@ -6090,7 +6195,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "white-mage-[hof]": {
-        "job-id": "59-white-mage-[hof]",
+        "job-id": "60-white-mage-[hof]",
         "job-type": "Mage",
         "job-name": "White Mage [HoF]",
         "job-stats": {
@@ -6195,7 +6300,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "amalthea": {
-        "job-id": "60-amalthea",
+        "job-id": "61-amalthea",
         "job-type": "Meia",
         "job-name": "Amalthea",
         "job-stats": {
@@ -6300,7 +6405,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "dark-knight-[hof]": {
-        "job-id": "61-dark-knight-[hof]",
+        "job-id": "62-dark-knight-[hof]",
         "job-type": "Warrior",
         "job-name": "Dark Knight [HoF]",
         "job-stats": {
@@ -6405,7 +6510,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "black-mage-[hof]": {
-        "job-id": "62-black-mage-[hof]",
+        "job-id": "63-black-mage-[hof]",
         "job-type": "Mage",
         "job-name": "Black Mage [HoF]",
         "job-stats": {
@@ -6510,7 +6615,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "master-monk": {
-        "job-id": "63-master-monk",
+        "job-id": "64-master-monk",
         "job-type": "Monk",
         "job-name": "Master Monk",
         "job-stats": {
@@ -6615,7 +6720,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "thief-[hof]": {
-        "job-id": "64-thief-[hof]",
+        "job-id": "65-thief-[hof]",
         "job-type": "Ranger",
         "job-name": "Thief [HoF]",
         "job-stats": {
@@ -6720,7 +6825,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "cloud-strife": {
-        "job-id": "65-cloud-strife",
+        "job-id": "66-cloud-strife",
         "job-type": "Warrior",
         "job-name": "Cloud Strife",
         "job-stats": {
@@ -6825,7 +6930,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "soldier-st-class-[hof]": {
-        "job-id": "66-soldier-1st-class-[hof]",
+        "job-id": "67-soldier-1st-class-[hof]",
         "job-type": "Warrior",
         "job-name": "Soldier 1st Class [HoF]",
         "job-stats": {
@@ -6930,7 +7035,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "ace-striker-[hof]": {
-        "job-id": "67-ace-striker-[hof]",
+        "job-id": "68-ace-striker-[hof]",
         "job-type": "Warrior",
         "job-name": "Ace Striker [HoF]",
         "job-stats": {
@@ -7035,7 +7140,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "santa-lucia": {
-        "job-id": "68-santa-lucia",
+        "job-id": "69-santa-lucia",
         "job-type": "Meia",
         "job-name": "Santa Lucia",
         "job-stats": {
@@ -7140,7 +7245,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "ninja": {
-        "job-id": "69-ninja",
+        "job-id": "70-ninja",
         "job-type": "Ranger",
         "job-name": "Ninja",
         "job-stats": {
@@ -7245,7 +7350,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "red-mage-[hof]": {
-        "job-id": "70-red-mage-[hof]",
+        "job-id": "71-red-mage-[hof]",
         "job-type": "Mage",
         "job-name": "Red Mage [HoF]",
         "job-stats": {
@@ -7350,7 +7455,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "samurai-[hof]": {
-        "job-id": "71-samurai-[hof]",
+        "job-id": "72-samurai-[hof]",
         "job-type": "Warrior",
         "job-name": "Samurai [HoF]",
         "job-stats": {
@@ -7455,7 +7560,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "glam-vamp": {
-        "job-id": "72-glam-vamp",
+        "job-id": "73-glam-vamp",
         "job-type": "Meia",
         "job-name": "Glam Vamp",
         "job-stats": {
@@ -7560,7 +7665,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "assassin-[hof]": {
-        "job-id": "73-assassin-[hof]",
+        "job-id": "74-assassin-[hof]",
         "job-type": "Ranger",
         "job-name": "Assassin [HoF]",
         "job-stats": {
@@ -7665,7 +7770,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "hero-of-despair": {
-        "job-id": "74-hero-of-despair",
+        "job-id": "75-hero-of-despair",
         "job-type": "Warrior",
         "job-name": "Hero of Despair",
         "job-stats": {
@@ -7770,7 +7875,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "sephiroth": {
-        "job-id": "75-sephiroth",
+        "job-id": "76-sephiroth",
         "job-type": "Warrior",
         "job-name": "Sephiroth",
         "job-stats": {
@@ -7875,7 +7980,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "flower-girl-of-midgar": {
-        "job-id": "76-flower-girl-of-midgar",
+        "job-id": "77-flower-girl-of-midgar",
         "job-type": "Meia",
         "job-name": "Flower Girl of Midgar",
         "job-stats": {
@@ -7980,7 +8085,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "cait-sith": {
-        "job-id": "77-cait-sith",
+        "job-id": "78-cait-sith",
         "job-type": "Ranger",
         "job-name": "Cait Sith",
         "job-stats": {
@@ -8085,7 +8190,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "sage": {
-        "job-id": "78-sage",
+        "job-id": "79-sage",
         "job-type": "Mage",
         "job-name": "Sage",
         "job-stats": {
@@ -8190,7 +8295,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "sword-saint": {
-        "job-id": "79-sword-saint",
+        "job-id": "80-sword-saint",
         "job-type": "Warrior",
         "job-name": "Sword Saint",
         "job-stats": {
@@ -8295,7 +8400,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "cocoon-aviator": {
-        "job-id": "80-cocoon-aviator",
+        "job-id": "81-cocoon-aviator",
         "job-type": "Ranger",
         "job-name": "Cocoon Aviator",
         "job-stats": {
@@ -8400,7 +8505,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "dragoon-[hof]": {
-        "job-id": "81-dragoon-[hof]",
+        "job-id": "82-dragoon-[hof]",
         "job-type": "Warrior",
         "job-name": "Dragoon [HoF]",
         "job-stats": {
@@ -8505,7 +8610,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "psicom-officer": {
-        "job-id": "82-psicom-officer",
+        "job-id": "83-psicom-officer",
         "job-type": "Meia",
         "job-name": "PSICOM Officer",
         "job-stats": {
@@ -8610,7 +8715,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "scholar-[hof]": {
-        "job-id": "83-scholar-[hof]",
+        "job-id": "84-scholar-[hof]",
         "job-type": "Mage",
         "job-name": "Scholar [HoF]",
         "job-stats": {
@@ -8715,7 +8820,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "dancer-[hof]": {
-        "job-id": "84-dancer-[hof]",
+        "job-id": "85-dancer-[hof]",
         "job-type": "Ranger",
         "job-name": "Dancer [HoF]",
         "job-stats": {
@@ -8820,7 +8925,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "vesna-krasna": {
-        "job-id": "85-vesna-krasna",
+        "job-id": "86-vesna-krasna",
         "job-type": "Meia",
         "job-name": "Vesna Krasna",
         "job-stats": {
@@ -8925,7 +9030,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "eorzeas-paladin": {
-        "job-id": "86-eorzea's-paladin",
+        "job-id": "87-eorzea's-paladin",
         "job-type": "Warrior",
         "job-name": "Eorzea's Paladin",
         "job-stats": {
@@ -9030,7 +9135,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "yshtola": {
-        "job-id": "87-y'shtola",
+        "job-id": "88-y'shtola",
         "job-type": "Mage",
         "job-name": "Y'shtola",
         "job-stats": {
@@ -9135,7 +9240,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "mythic-sage-[hof]": {
-        "job-id": "88-mythic-sage-[hof]",
+        "job-id": "89-mythic-sage-[hof]",
         "job-type": "Mage",
         "job-name": "Mythic Sage [HoF]",
         "job-stats": {
@@ -9240,7 +9345,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "mythic-ninja-[hof]": {
-        "job-id": "89-mythic-ninja-[hof]",
+        "job-id": "90-mythic-ninja-[hof]",
         "job-type": "Ranger",
         "job-name": "Mythic Ninja [HoF]",
         "job-stats": {
@@ -9345,7 +9450,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "mythic-knight-[hof]": {
-        "job-id": "90-mythic-knight-[hof]",
+        "job-id": "91-mythic-knight-[hof]",
         "job-type": "Warrior",
         "job-name": "Mythic Knight [HoF]",
         "job-stats": {
@@ -9450,7 +9555,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "paladin-[hof]": {
-        "job-id": "91-paladin-[hof]",
+        "job-id": "92-paladin-[hof]",
         "job-type": "Warrior",
         "job-name": "Paladin [HoF]",
         "job-stats": {
@@ -9555,7 +9660,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "eorzean-bard": {
-        "job-id": "92-eorzean-bard",
+        "job-id": "93-eorzean-bard",
         "job-type": "Sarah",
         "job-name": "Eorzean Bard",
         "job-stats": {
@@ -9660,7 +9765,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "viking-[hof]": {
-        "job-id": "93-viking-[hof]",
+        "job-id": "94-viking-[hof]",
         "job-type": "Ranger",
         "job-name": "Viking [HoF]",
         "job-stats": {
@@ -9765,7 +9870,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "devout-[hof]": {
-        "job-id": "94-devout-[hof]",
+        "job-id": "95-devout-[hof]",
         "job-type": "Mage",
         "job-name": "Devout [HoF]",
         "job-stats": {
@@ -9870,7 +9975,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "crimson-archer": {
-        "job-id": "95-crimson-archer",
+        "job-id": "96-crimson-archer",
         "job-type": "Sarah",
         "job-name": "Crimson Archer",
         "job-stats": {
@@ -9975,7 +10080,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "nachtflug": {
-        "job-id": "96-nachtflug",
+        "job-id": "97-nachtflug",
         "job-type": "Sarah",
         "job-name": "Nachtflug",
         "job-stats": {
@@ -10080,7 +10185,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "heretical-knight-[hof]": {
-        "job-id": "97-heretical-knight-[hof]",
+        "job-id": "98-heretical-knight-[hof]",
         "job-type": "Warrior",
         "job-name": "Heretical Knight [HoF]",
         "job-stats": {
@@ -10185,7 +10290,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/1.png"
     },
     "primeval-witch": {
-        "job-id": "98-primeval-witch",
+        "job-id": "99-primeval-witch",
         "job-type": "Meia",
         "job-name": "Primeval Witch",
         "job-stats": {
@@ -10290,7 +10395,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "judge-magister-[hof]": {
-        "job-id": "99-judge-magister-[hof]",
+        "job-id": "100-judge-magister-[hof]",
         "job-type": "Ranger",
         "job-name": "Judge Magister [HoF]",
         "job-stats": {
@@ -10395,7 +10500,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "prima-donna": {
-        "job-id": "100-prima-donna",
+        "job-id": "101-prima-donna",
         "job-type": "Sarah",
         "job-name": "Prima Donna",
         "job-stats": {
@@ -10500,7 +10605,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "beach-queen": {
-        "job-id": "101-beach-queen",
+        "job-id": "102-beach-queen",
         "job-type": "Sarah",
         "job-name": "Beach Queen",
         "job-stats": {
@@ -10605,7 +10710,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "deep-diver": {
-        "job-id": "102-deep-diver",
+        "job-id": "103-deep-diver",
         "job-type": "Monk",
         "job-name": "Deep Diver",
         "job-stats": {
@@ -10710,7 +10815,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "mellow-mermaid": {
-        "job-id": "103-mellow-mermaid",
+        "job-id": "104-mellow-mermaid",
         "job-type": "Meia",
         "job-name": "Mellow Mermaid",
         "job-stats": {
@@ -10815,7 +10920,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/2.png"
     },
     "tidus": {
-        "job-id": "104-tidus",
+        "job-id": "105-tidus",
         "job-type": "Ranger",
         "job-name": "Tidus",
         "job-stats": {
@@ -10920,7 +11025,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "legendary-guardian": {
-        "job-id": "105-legendary-guardian",
+        "job-id": "106-legendary-guardian",
         "job-type": "Warrior",
         "job-name": "Legendary Guardian",
         "job-stats": {
@@ -11025,7 +11130,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
     "ascetic": {
-        "job-id": "112-ascetic",
+        "job-id": "113-ascetic",
         "job-type": "Monk",
         "job-name": "Ascetic",
         "job-stats": {
@@ -11130,7 +11235,7 @@
         "job-class-icon": ""
     },
     "proud-cygnus": {
-        "job-id": "107-proud-cygnus",
+        "job-id": "108-proud-cygnus",
         "job-type": "Sarah",
         "job-name": "Proud Cygnus",
         "job-stats": {
@@ -11235,7 +11340,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "al-bhed-huntress": {
-        "job-id": "108-al-bhed-huntress",
+        "job-id": "109-al-bhed-huntress",
         "job-type": "Sarah",
         "job-name": "Al-Bhed Huntress",
         "job-stats": {
@@ -11340,7 +11445,7 @@
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/3.png"
     },
     "shorn-one": {
-        "job-id": "109-shorn-one",
+        "job-id": "110-shorn-one",
         "job-type": "Warrior",
         "job-name": "Shorn One",
         "job-stats": {
@@ -11445,7 +11550,7 @@
         "job-class-icon": ""
     },
     "skyseer": {
-        "job-id": "110-skyseer",
+        "job-id": "111-skyseer",
         "job-type": "Mage",
         "job-name": "Skyseer",
         "job-stats": {
@@ -11550,7 +11655,7 @@
         "job-class-icon": ""
     },
     "gambler": {
-        "job-id": "111-gambler",
+        "job-id": "112-gambler",
         "job-type": "Ranger",
         "job-name": "Gambler",
         "job-stats": {
@@ -11655,7 +11760,7 @@
         "job-class-icon": ""
     },
     "night-walker": {
-        "job-id": "113-night-walker",
+        "job-id": "114-night-walker",
         "job-type": "Meia",
         "job-name": "Night Walker",
         "job-stats": {
@@ -11760,7 +11865,7 @@
         "job-class-icon": ""
     },
     "wild-rider": {
-        "job-id": "114-wild-rider",
+        "job-id": "115-wild-rider",
         "job-type": "Sophie",
         "job-name": "Wild Rider",
         "job-stats": {
@@ -11864,8 +11969,113 @@
         "job-thumbnail": "-",
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
     },
+    "hermit-[hof]": {
+        "job-id": "116-hermit-[hof]",
+        "job-type": "Monk",
+        "job-name": "Hermit [HoF]",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
     "jet-stunner": {
-        "job-id": "115-jet-stunner",
+        "job-id": "117-jet-stunner",
         "job-type": "Sophie",
         "job-name": "Jet Stunner",
         "job-stats": {
@@ -11968,5 +12178,1055 @@
         },
         "job-thumbnail": "-",
         "job-class-icon": "https://img.altema.jp/ffmobius/jobtype/6.png"
+    },
+    "magitek-jester": {
+        "job-id": "118-magitek-jester",
+        "job-type": "Mage",
+        "job-name": "Magitek Jester",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "magitek-heroine": {
+        "job-id": "119-magitek-heroine",
+        "job-type": "Ranger",
+        "job-name": "Magitek Heroine",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "balamb-mercenary-[hof]": {
+        "job-id": "120-balamb-mercenary-[hof]",
+        "job-type": "Warrior",
+        "job-name": "Balamb Mercenary [HoF]",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "tonberry-suit-[hof]": {
+        "job-id": "121-tonberry-suit-[hof]",
+        "job-type": "Mage",
+        "job-name": "Tonberry Suit [HoF]",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "thief-of-tantalus-[hof]": {
+        "job-id": "122-thief-of-tantalus-[hof]",
+        "job-type": "Ranger",
+        "job-name": "Thief of Tantalus [Hof]",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "moogle-suit-[hof]": {
+        "job-id": "123-moogle-suit-[hof]",
+        "job-type": "Monk",
+        "job-name": "Moogle Suit [HoF]",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "gardien": {
+        "job-id": "124-gardien",
+        "job-type": "Graff",
+        "job-name": "Gardien",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "toredor": {
+        "job-id": "125-toredor",
+        "job-type": "Graff",
+        "job-name": "Toredor",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "gilgamesh": {
+        "job-id": "126-gilgamesh",
+        "job-type": "Ranger",
+        "job-name": "Gilgamesh",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
+    },
+    "cacciatrice": {
+        "job-id": "127-cacciatrice",
+        "job-type": "Ranger",
+        "job-name": "Cacciatrice",
+        "job-stats": {
+            "job-hp": "",
+            "job-attack": "",
+            "job-break-power": "",
+            "job-magic": "",
+            "job-crit-chance": "",
+            "job-speed": "",
+            "job-defense": ""
+        },
+        "job-orbs": [
+            "",
+            "",
+            ""
+        ],
+        "job-mp-role": "",
+        "job-autoes": {
+            "job-element-enhance": {
+                "job-fire-boost": "",
+                "job-water-boost": "",
+                "job-wind-boost": "",
+                "job-earth-boost": "",
+                "job-light-boost": "",
+                "job-dark-boost": ""
+            },
+            "job-element-resist": {
+                "job-fire-resist": "",
+                "job-water-resist": "",
+                "job-wind-resist": "",
+                "job-earth-resist": "",
+                "job-light-resist": "",
+                "job-dark-resist": ""
+            },
+            "job-ailment-resist": {
+                "job-avert-atk": "",
+                "job-avert-brk": "",
+                "job-avert-mag": "",
+                "job-avert-crit": "",
+                "job-avert-slow": "",
+                "job-avert-stun": "",
+                "job-avert-def": "",
+                "job-avert-unguard": "",
+                "job-avert-bio": ""
+            },
+            "job-clutch-boons": "",
+            "job-drive-heal": {
+                "job-heal-fire": "",
+                "job-heal-water": "",
+                "job-heal-wind": "",
+                "job-heal-earth": "",
+                "job-heal-light": "",
+                "job-heal-dark": "",
+                "job-heal-life": ""
+            },
+            "job-auto-damage": {
+                "job-dmg-painful-break": "",
+                "job-dmg-improved-crits": "",
+                "job-dmg-weakness": "",
+                "job-dmg-scourge": "",
+                "job-dmg-ravage": "",
+                "job-dmg-attuned-chain": "",
+                "job-dmg-ability-chain": "",
+                "job-dmg-furious-salvo": "",
+                "job-dmg-duelist": ""
+            },
+            "job-auto-break": {
+                "job-brk-piercing-break": "",
+                "job-brk-quick-break": "",
+                "job-brk-flash-break": "",
+                "job-brk-extended-break": ""
+            },
+            "job-auto-defense": {
+                "job-def-steelguard": "",
+                "job-def-healing-victory": "",
+                "job-def-medic": ""
+            },
+            "job-auto-other": {
+                "job-ult-charger": "",
+                "job-auto-ult": "",
+                "job-lore": "",
+                "job-prism-return": "",
+                "job-kill-draw": "",
+                "job-ele-third": "",
+                "job-prism-start": "",
+                "job-life-start": "",
+                "job-armour-break": "",
+                "job-risk-taker": "",
+                "job-high-roller": ""
+            },
+            "job-shift": ""
+        },
+        "job-ultimate": {
+            "job-ultimate-name": "",
+            "job-ultimate-range": "",
+            "job-ultimate-attack": "",
+            "job-ultimate-break": "",
+            "job-ultimate-crit-chance": "",
+            "job-ultimate-effects": ""
+        },
+        "job-thumbnail": "",
+        "job-class-icon": ""
     }
 }
