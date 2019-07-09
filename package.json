@@ -4,7 +4,8 @@
   "description": "discordbot-docker-application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dbupdate": "gsjson 1V-eQTG1UNTDnG-lrGwd_Iby5rwLZlpZ0nxpuhobp_r4 src/jobs.json -ab --hash jobId"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "google-spreadsheet": "^2.0.7",
+    "google-spreadsheet-to-json": "^1.0.0",
     "googleapis": "^27.0.0",
     "superagent": "^3.8.3"
   }
