@@ -15,9 +15,12 @@ module.exports = {
             var jobName = PickByJobDetail(jobDB[arg1], 'jobName[A-Za-z]*')
             var jobStats = PickByJobDetail(jobDB[arg1], 'jobStat[A-Za-z]*');
             var jobDmg = PickByJobDetail(jobDB[arg1], 'jobDmg[A-Za-z]*');
+            var jobBrk = PickByJobDetail(jobDb[arg1], 'jobBrk[A-Za-z]*');
+
             console.log(jobName);
             console.log(jobStats);
             console.log(jobDmg);
+            console.log(jobBrk);
         }
     }   
 }
