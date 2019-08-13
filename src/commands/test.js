@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const [ jobDB ] = require('../jobs.json');
-const pick = require('../Utilities/pick.js')
+const pick = require('../utilities/pick.js')
 
 module.exports = {
     name: 'test',
@@ -12,17 +12,40 @@ module.exports = {
 
             if (!arg1) return; // TODO: provide response for invalid query
             
-            var jobName = PickByJobDetail(jobDB[arg1], 'jobName[A-Za-z]*')
+            var { jobName } = PickByJobDetail(jobDB[arg1], 'jobName[A-Za-z]*')
             var jobStats = PickByJobDetail(jobDB[arg1], 'jobStat[A-Za-z]*');
             var jobDmg = PickByJobDetail(jobDB[arg1], 'jobDmg[A-Za-z]*');
-            var jobBrk = PickByJobDetail(jobDb[arg1], 'jobBrk[A-Za-z]*');
+            var jobBrk = PickByJobDetail(jobDB[arg1], 'jobBrk[A-Za-z]*');
 
             console.log(jobName);
             console.log(jobStats);
             console.log(jobDmg);
             console.log(jobBrk);
+
+            msg.channel.send({embed: {
+                "thumbnail": {
+                    "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+                },
+                "description": "orbs n stuff",
+                "author": {
+                    "name": jobName,
+                    "url": "https://discordapp.com", // redirect to web app
+                    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png" // job type icon
+                },
+                "footer": {
+                    "icon_url": msg.author.avatarURL,
+                    "text": `${msg.author.username}'s request`
+                }
+
+                
+                }
+            });
         }
     }   
+}
+
+const EmbededMessage = {
+
 }
 
 /**
