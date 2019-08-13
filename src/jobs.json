@@ -10,6 +10,8 @@
             "jobStatMagic": 510,
             "jobStatSpeed": 4,
             "jobStatDefense": 1,
+            "jobOrbSet1": "Fire-Water-Earth",
+            "jobOrbSet2": "Fire-Water-Light",
             "jobUrlIcon": "https://img.altema.jp/ffmobius/jobtype/1.png"
         },
         "2-apprentice-mage": {
